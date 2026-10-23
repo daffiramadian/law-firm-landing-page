@@ -1,0 +1,6 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#fdf1ea"/>
+  <text x="400" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#83746b" text-anchor="middle" font-weight="600">Room 3</text>
+  <text x="400" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#83746b" text-anchor="middle">800 × 600 (4:3)</text>
+  <text x="400" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#51443c" text-anchor="middle">[Placeholder] Perpustakaan</text>
+</svg>
