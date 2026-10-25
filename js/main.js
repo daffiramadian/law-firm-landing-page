@@ -17,6 +17,7 @@
   }
 
   menuBtn?.addEventListener('click', () => {
+    if (!mobileNav) return;
     const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
     menuBtn.setAttribute('aria-expanded', !isOpen);
     mobileNav.hidden = isOpen;
@@ -45,7 +46,7 @@
         const href = this.getAttribute('href');
         if (href === '#' || !href) return;
         
-        const target = document.querySelector(href);
+        const target = document.getElementById(href.slice(1));
         if (!target) return;
 
         e.preventDefault();
@@ -86,7 +87,7 @@
   updateActiveNav();
 
   // Fade-in on scroll
-  if (!reducedMotion) {
+  if (!reducedMotion && 'IntersectionObserver' in window) {
     const revealElements = document.querySelectorAll('.reveal');
     
     const observer = new IntersectionObserver((entries) => {

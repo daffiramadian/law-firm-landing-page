@@ -264,6 +264,10 @@ main > :last-child {
   border-color: var(--outline);
 }
 
+.btn-icon {
+  flex: 0 0 auto;
+}
+
 /* ================================================================
    6. SECTION LABEL WITH LINE
    ================================================================ */
@@ -425,6 +429,10 @@ header {
   padding: var(--space-lg) var(--padding-mobile);
 }
 
+.nav-mobile:not([hidden]) {
+  display: block;
+}
+
 .nav-mobile ul {
   list-style: none;
   display: flex;
@@ -439,8 +447,10 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--on-surface);
-  display: block;
-  padding: var(--space-xs) 0;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  min-height: 44px;
 }
 
 .nav-mobile a:hover {
@@ -450,6 +460,14 @@ header {
 .nav-mobile a:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
+}
+
+.nav-mobile-cta {
+  margin-top: var(--space-md);
+}
+
+.nav-mobile-cta .btn-icon {
+  margin-right: var(--space-xs);
 }
 
 /* Header CTA button */
@@ -669,7 +687,6 @@ footer p {
   border-radius: var(--radius-xl);
   overflow: hidden;
   background-color: var(--surface-container);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 .hero-image img {
@@ -691,7 +708,6 @@ footer p {
   background-color: var(--surface-container-low);
   padding: var(--space-lg);
   border-radius: 1.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
@@ -714,6 +730,14 @@ footer p {
   font-family: var(--font-heading);
   line-height: 1;
   color: var(--primary-container);
+}
+
+.stat-value--on-surface {
+  color: var(--on-surface);
+}
+
+.stat-value--primary {
+  color: var(--primary);
 }
 
 .stat-label {
@@ -792,7 +816,6 @@ footer p {
   border-radius: var(--radius-xl);
   overflow: hidden;
   background-color: var(--surface-container);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 .about-image-main img {
@@ -859,7 +882,6 @@ footer p {
   border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--surface-container);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .room-image img {
@@ -936,12 +958,12 @@ footer p {
   border: 1px solid var(--outline-variant);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .practice-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-color: var(--primary-container);
 }
 
 .practice-num {
@@ -1036,7 +1058,6 @@ footer p {
   border-radius: var(--radius-xl);
   overflow: hidden;
   background-color: var(--surface-container);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 .lawyer-image img {
