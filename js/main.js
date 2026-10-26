@@ -58,38 +58,88 @@
     });
   }
 
-  // Scroll-spy for nav (IntersectionObserver approach)
+  // Scroll-spy for nav (exactly one aria-current="true" at all times)
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
   if (sections.length > 0 && navLinks.length > 0) {
+    const header = document.querySelector('header');
+    const sectionMap = new Map();
+    navLinks.forEach(link => {
+      const id = link.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el) sectionMap.set(id, el);
+    });
+
+    function setActive(id) {
+      let oneActive = false;
+      navLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${id}`;
+        if (isActive) {
+          link.setAttribute('aria-current', 'true');
+          oneActive = true;
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+      // Fallback: always keep exactly one active
+      if (!oneActive && navLinks.length) {
+        navLinks[0].setAttribute('aria-current', 'true');
+      }
+    }
+
+    function onScroll() {
+      if (!header) return;
+      const headerHeight = header.offsetHeight;
+      const scrollY = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight;
+      const winHeight = window.innerHeight;
+
+      // Bottom boundary -> last section (#contact)
+      if (scrollY + winHeight >= docHeight - 1) {
+        setActive('#contact'.slice(1));
+        return;
+      }
+
+      // Find section whose top has passed the header line
+      let activeId = null;
+      let maxPassedTop = -Infinity;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top + window.pageYOffset;
+        if (sectionTop <= scrollY + headerHeight + 50 && sectionTop > maxPassedTop) {
+          maxPassedTop = sectionTop;
+          activeId = section.id;
+        }
+      });
+
+      // Top boundary -> #hero (first section)
+      if (!activeId && sections.length) {
+        activeId = sections[0].id;
+      }
+
+      setActive(activeId);
+    }
+
+    // Use IntersectionObserver as primary, scroll listener as boundary fallback
     const observerOptions = {
       root: null,
       rootMargin: '-20% 0px -60% 0px',
       threshold: 0
     };
 
-    let currentSection = '';
-
     const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          currentSection = entry.target.id;
-          updateActiveLinks();
+          setActive(entry.target.id);
         }
       });
     }, observerOptions);
 
     sections.forEach(section => scrollObserver.observe(section));
 
-    function updateActiveLinks() {
-      navLinks.forEach(link => {
-        link.removeAttribute('aria-current');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-          link.setAttribute('aria-current', 'true');
-        }
-      });
-    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // initialize active state on load
   }
 
   // Header scroll state

@@ -335,6 +335,9 @@ main > :last-child {
 .section-label {
   display: inline-flex;
   align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  align-self: flex-start;
   padding: 0.25rem 0.875rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
@@ -586,6 +589,7 @@ header.is-scrolled {
   display: flex;
   gap: var(--space-lg);
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .nav-desktop a {
@@ -598,6 +602,7 @@ header.is-scrolled {
   color: var(--text);
   transition: color 0.25s ease;
   padding: 0.5rem 0;
+  white-space: nowrap;
 }
 
 .nav-desktop a::after {
@@ -634,6 +639,15 @@ header.is-scrolled {
   outline-offset: 4px;
   border-radius: 2px;
 }
+
+/* CTA text spans (responsive shortening) */
+.header-cta .cta-full,
+.header-cta .cta-short {
+  display: inline-block;
+}
+
+.header-cta .cta-full { display: inline; }
+.header-cta .cta-short { display: none; }
 
 /* Mobile menu button */
 .mobile-menu-btn {
@@ -728,20 +742,44 @@ header.is-scrolled .nav-mobile {
   margin-top: var(--space-lg);
 }
 
-@media (min-width: 768px) {
-  .mobile-menu-btn {
-    display: none;
-  }
-
-  .nav-desktop {
-    display: block;
-  }
+.nav-mobile-cta .btn {
+  width: 100%;
+  justify-content: center;
 }
 
-@media (min-width: 1024px) {
+/* Breakpoints */
+
+/* Compact desktop: 1100px - 1439px */
+@media (min-width: 1100px) {
+  .mobile-menu-btn { display: none; }
+  .nav-desktop { display: block; }
+
+  .nav-desktop ul { gap: 1rem; }
+
+  .nav-desktop a {
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+  }
+
   .header-cta {
     display: inline-flex;
   }
+
+  .header-cta .cta-full { display: none; }
+  .header-cta .cta-short { display: inline; }
+}
+
+/* Standard desktop: 1440px+ */
+@media (min-width: 1440px) {
+  .nav-desktop ul { gap: 1.75rem; }
+
+  .nav-desktop a {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  .header-cta .cta-full { display: inline; }
+  .header-cta .cta-short { display: none; }
 }
 
 /* ================================================================
@@ -1744,9 +1782,17 @@ footer p {
 }
 
 @media (min-width: 768px) {
+  .lawyer {
+    min-height: calc(100vh - var(--header-h) - 40px);
+    display: flex;
+    align-items: center;
+    padding: clamp(5rem, 8vh, 8rem) 0;
+  }
+
   .lawyer-container {
     grid-template-columns: 1fr 1.5fr;
     gap: var(--space-3xl);
+    align-items: center;
   }
 
   .lawyer-image-wrapper {
@@ -2196,8 +2242,4 @@ footer {
   }
 }
 
-@media (min-width: 1280px) {
-  .nav-desktop ul {
-    gap: var(--space-xl);
-  }
-}
+
