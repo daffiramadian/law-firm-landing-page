@@ -37,3 +37,15 @@ One-page marketing site for an Indonesian law firm. Indonesian language (lang="i
 - Do not touch files outside the current stage's scope.
 - Before finishing a stage, open a browser-equivalent check if you can; otherwise
   list what I should check manually.
+
+  ## Design update (UI upgrade)
+- Source of inspiration: /reference/ui-inspiration/ (screenshots). Borrow
+  ideas only; do NOT copy layouts, colors, or any numbers/ratings from them.
+- Palette tokens are defined in UPGRADE.md section 3. Replace the old pinkish
+  surface colors. On dark sections use only --caramel and --text-on-dark*.
+- Dark sections are now allowed (hero, FAQ, footer). Keep: no gradients, no
+  heavy shadows, no blur blobs. Glass cards are allowed in the hero only.
+- Accent words in big headings: Newsreader italic in accent/caramel color.
+- Never add fake ratings, review counts, success rates, case counts, or awards.
+  Stats stay "[Placeholder] 00+".
+- Do not change copy or section order unless the stage asks for it.

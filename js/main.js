@@ -58,33 +58,53 @@
     });
   }
 
-  // Scroll-spy for nav
+  // Scroll-spy for nav (IntersectionObserver approach)
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
-  function updateActiveNav() {
-    const headerHeight = document.querySelector('header')?.offsetHeight || 0;
-    const scrollPos = window.pageYOffset + headerHeight + 100;
+  if (sections.length > 0 && navLinks.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
 
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
+    let currentSection = '';
 
-    navLinks.forEach(link => {
-      link.removeAttribute('aria-current');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.setAttribute('aria-current', 'page');
-      }
-    });
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          currentSection = entry.target.id;
+          updateActiveLinks();
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => scrollObserver.observe(section));
+
+    function updateActiveLinks() {
+      navLinks.forEach(link => {
+        link.removeAttribute('aria-current');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.setAttribute('aria-current', 'true');
+        }
+      });
+    }
   }
 
-  window.addEventListener('scroll', updateActiveNav);
-  updateActiveNav();
+  // Header scroll state
+  const header = document.querySelector('header');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > 20) {
+      header?.classList.add('is-scrolled');
+    } else {
+      header?.classList.remove('is-scrolled');
+    }
+    lastScroll = currentScroll;
+  });
 
   // Fade-in on scroll
   if (!reducedMotion && 'IntersectionObserver' in window) {
