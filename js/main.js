@@ -147,4 +147,63 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
 
+  // Practice rows: single active row controller, zero layout shift
+  const practiceList = document.querySelector('.practice-list');
+  const practiceRows = document.querySelectorAll('.practice-row');
+
+  if (practiceList && practiceRows.length) {
+    let activeRow = null;
+    let leaveTimer = null;
+
+    function activateRow(row) {
+      if (activeRow === row) return;
+      clearTimeout(leaveTimer);
+      practiceRows.forEach(r => r.classList.remove('is-active'));
+      row.classList.add('is-active');
+      activeRow = row;
+    }
+
+    function deactivateAll() {
+      practiceRows.forEach(r => r.classList.remove('is-active'));
+      activeRow = null;
+    }
+
+    // Desktop only: hover-based activation
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      practiceRows.forEach(row => {
+        row.addEventListener('pointerenter', () => activateRow(row));
+      });
+
+      practiceList.addEventListener('pointerleave', () => {
+        leaveTimer = setTimeout(deactivateAll, 100);
+      });
+
+      // Keep row active if pointer moves to preview area
+      practiceRows.forEach(row => {
+        row.addEventListener('pointermove', (e) => {
+          if (e.target.classList.contains('practice-row-preview')) {
+            clearTimeout(leaveTimer);
+          }
+        });
+      });
+    }
+
+    // Keyboard: focus-visible activates row, blur deactivates
+    practiceRows.forEach(row => {
+      row.addEventListener('focus', () => activateRow(row));
+      row.addEventListener('blur', () => {
+        if (!row.contains(document.activeElement)) {
+          deactivateAll();
+        }
+      });
+    });
+
+    // Touch/mobile: no hover effects, just tap
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      practiceRows.forEach(row => {
+        row.classList.add('is-active'); // Show all descriptions
+      });
+    }
+  }
+
 })();

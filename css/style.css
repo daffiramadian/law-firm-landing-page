@@ -1498,13 +1498,12 @@ footer p {
   border-radius: var(--radius-card);
   transition: background-color 0.2s ease;
   text-decoration: none;
-  border-bottom: 1px solid var(--line);
+  box-shadow: inset 0 -1px 0 0 var(--line);
 }
 
-.practice-row:hover,
-.practice-row:focus-within {
+.practice-row.is-active {
   background-color: var(--sand-deep);
-  border-bottom-color: transparent;
+  box-shadow: none;
 }
 
 .practice-row:focus-visible {
@@ -1516,8 +1515,9 @@ footer p {
 .practice-row-inner {
   display: grid;
   grid-template-columns: 48px minmax(0, 1fr) auto 40px;
+  grid-template-rows: auto auto;
   gap: var(--space-sm);
-  align-items: center;
+  align-items: start;
   padding-right: var(--practice-preview-reserve);
 }
 
@@ -1559,47 +1559,41 @@ footer p {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.practice-row:hover .practice-row-arrow,
-.practice-row:focus-within .practice-row-arrow {
+.practice-row.is-active .practice-row-arrow {
   background-color: var(--text);
   color: var(--bg);
 }
 
-/* Description: hidden on desktop, visible on mobile */
+/* Description: always reserves grid space, opacity/transform only */
 .practice-row-description {
   grid-column: 1 / -1;
+  grid-row: 2;
   font-size: 0.9375rem;
   color: var(--text-soft);
   line-height: var(--lh-relaxed);
-  margin-top: var(--space-sm);
-  display: none;
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-sm);
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
 }
 
-/* Desktop: show description on hover/focus, with grid trick for height animation */
+/* Desktop: show description on .is-active state */
 @media (min-width: 768px) {
-  .practice-row-description {
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-  }
-
-  .practice-row:hover .practice-row-description,
-  .practice-row:focus-within .practice-row-description {
-    max-height: 200px;
+  .practice-row.is-active .practice-row-description {
     opacity: 1;
-    padding: var(--space-sm) 0 var(--space-sm) var(--space-sm);
-    margin-top: 0;
+    pointer-events: auto;
   }
 }
 
 /* Floating preview image on desktop */
 .practice-row-preview {
   position: absolute;
-  top: 50%;
+  top: 0;
   right: var(--space-sm);
-  transform: translateY(-50%) rotate(-6deg);
+  bottom: 0;
+  margin: auto;
+  transform: translateY(0) rotate(-6deg);
   width: var(--practice-preview-width);
   height: var(--practice-preview-height);
   border-radius: var(--radius-lg);
@@ -1607,7 +1601,11 @@ footer p {
   box-shadow: var(--soft-shadow);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease 0.1s;
+  transition: opacity 0.2s ease 0.1s, transform 0.2s ease 0.1s;
+}
+
+.practice-row.is-active .practice-row-preview {
+  opacity: 1;
 }
 
 .practice-row-preview img {
@@ -1616,17 +1614,11 @@ footer p {
   object-fit: cover;
 }
 
-@media (min-width: 768px) {
-  .practice-row:hover .practice-row-preview,
-  .practice-row:focus-within .practice-row-preview {
-    opacity: 1;
-  }
-}
-
 /* Mobile: no preview, description always visible, taller tap target */
 @media (max-width: 767px) {
   .practice-row-inner {
     grid-template-columns: 32px minmax(0, 1fr) 40px;
+    grid-template-rows: auto auto auto;
     align-items: start;
     padding-right: 0;
   }
@@ -1647,11 +1639,11 @@ footer p {
 
   .practice-row-description {
     grid-column: 2 / 4;
-    display: block;
-    max-height: none;
+    grid-row: 3;
     opacity: 1;
     padding: 0;
     margin-top: var(--space-sm);
+    pointer-events: auto;
   }
 
   .practice-row-preview {
