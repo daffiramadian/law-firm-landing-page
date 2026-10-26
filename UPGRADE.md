@@ -1,4 +1,4 @@
-# Hartawati Law Firm: UI Upgrade Plan (from "bland" to "memorable")
+# Daffi Law Firm: UI Upgrade Plan (from "bland" to "memorable")
 
 Base site works. This plan fixes the nav and adds personality, using the Behance lawyer site as *inspiration*. We borrow the ideas, not the design: your palette, content and fonts stay.
 
@@ -128,7 +128,7 @@ Pill with a **circular arrow icon** at the right:
 
 ### Footer
 - Dark, links in 3 columns, thin top border
-- **Giant "HARTAWATI" wordmark** across the bottom: `font-size: clamp(4rem, 18vw, 16rem)`, weight 300, color `rgba(246,237,225,.08)`, cropped by the bottom edge. This is the typographic moment.
+- **Giant "DAFFI" wordmark** across the bottom: `font-size: clamp(4rem, 18vw, 16rem)`, weight 300, color `rgba(246,237,225,.08)`, cropped by the bottom edge. This is the typographic moment.
 
 ### Motion (small and restrained)
 - Reveal on scroll with stagger (60ms steps), 24px rise + fade
@@ -182,7 +182,7 @@ Same workflow as before: one stage, review in the browser (phone and desktop), `
 > Stage U4 only. Restyle #tentang-kami per UPGRADE.md §4 "About" on the sand background (large statement, quote mark, two numbered value points, photo slot with rotated shape). Then add a new section "Alur Penanganan" after practice areas per "Process": 4 placeholder steps with a dashed SVG curved path on desktop and a vertical line on mobile. Keep all text as [Placeholder].
 
 ### U5: FAQ, contact, footer
-> Stage U5 only. Add a FAQ section (dark rounded panel, <details>/<summary> accordion, 5 placeholder questions, first one open, plus/× icon animation) between the process and contact sections. Restyle #contact per spec (WhatsApp-first, 3 info rows with circular icons, no form). Rebuild the footer with 3 link columns and the giant HARTAWATI wordmark across the bottom (clamp(4rem,18vw,16rem), weight 300, 8% opacity, cropped). Add FAQ to the nav only if it fits; otherwise leave nav as is.
+> Stage U5 only. Add a FAQ section (dark rounded panel, <details>/<summary> accordion, 5 placeholder questions, first one open, plus/× icon animation) between the process and contact sections. Restyle #contact per spec (WhatsApp-first, 3 info rows with circular icons, no form). Rebuild the footer with 3 link columns and the giant DAFFI wordmark across the bottom (clamp(4rem,18vw,16rem), weight 300, 8% opacity, cropped). Add FAQ to the nav only if it fits; otherwise leave nav as is.
 
 ### U6: Motion, polish, QA
 > Stage U6 only. Add reveal-on-scroll with 60ms stagger, hero headline load animation, and hover micro-interactions as described in UPGRADE.md §4 "Motion". Disable all of it under prefers-reduced-motion. Then audit at 375, 768, 1280 and 1920 px: no horizontal scroll, tap targets ≥ 44px, contrast AA (especially text on dark sections), heading order, focus states. Report each issue and fix it. Do not add new sections or change content.

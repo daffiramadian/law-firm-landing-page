@@ -1,4 +1,4 @@
-# Hartawati Law Firm: Agent Handover (Round 2)
+# Daffi Law Firm: Agent Handover (Round 2)
 
 > **Status:** WP1 is **COMPLETED & COMMITTED** (`feat(wp1): fix header overlap, arrow button icons, and visual polish`).  
 > **Next Task:** Start immediately with **WP2: Practice Areas Hover Bug**.
@@ -95,7 +95,7 @@ Hovering a row expands it (description appears, row height grows), pushing rows 
 - **Sari N. · Pegawai Swasta:** Mudah dihubungi dan selalu memberi kabar perkembangan perkara.
 
 ### A.5 Lawyer Profile
-- Name: Hartawati, S.H., M.H. | Role: Advokat & Pendiri | Chips: Advokat Terdaftar · Magister Hukum
+- Name: Daffi, S.H., M.H. | Role: Advokat & Pendiri | Chips: Advokat Terdaftar · Magister Hukum
 - Education: Fakultas Hukum, Universitas Negeri · Pendidikan Profesi Advokat
 
 ### A.6 Contact

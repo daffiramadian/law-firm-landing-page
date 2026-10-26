@@ -1,4 +1,4 @@
-// Hartawati Law Firm - Main JavaScript
+// Daffi Law Firm - Main JavaScript
 
 (function() {
   'use strict';

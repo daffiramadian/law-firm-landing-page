@@ -1,4 +1,4 @@
-# Hartawati Law Firm website
+# Daffi Law Firm website
 
 One-page marketing site for an Indonesian law firm. Indonesian language (lang="id").
 

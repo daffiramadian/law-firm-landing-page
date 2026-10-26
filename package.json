@@ -1,14 +1,9 @@
 {
-  "name": "hartawati-law-firm",
+  "name": "daffi-law-firm",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx serve ."
-  },
-  "keywords": [],
-  "author": "",
+  "description": "Daffi Law Firm — A modern, accessible one-page website built with vanilla web technologies (HTML5, CSS3, Vanilla JS).",
   "license": "ISC",
-  "type": "commonjs"
+  "scripts": {
+    "start": "npx serve ."
+  }
 }

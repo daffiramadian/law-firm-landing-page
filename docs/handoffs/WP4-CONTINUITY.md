@@ -1,4 +1,4 @@
-# Hartawati Law Firm: Work Package 4 (WP4) Continuity Guide
+# Daffi Law Firm: Work Package 4 (WP4) Continuity Guide
 
 > **Project State:**
 > - **WP1 (Header & Visual Polish):** COMPLETED (`a16a7f8`)
@@ -15,7 +15,7 @@
 If starting a new session or switching agents, copy and paste this exact prompt:
 
 ```markdown
-We are continuing the Round 2 upgrade for the Hartawati Law Firm website.
+We are continuing the Round 2 upgrade for the Daffi Law Firm website.
 
 STATUS:
 - WP1, WP2, and WP3 are COMPLETED and committed to git.

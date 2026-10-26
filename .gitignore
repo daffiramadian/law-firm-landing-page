@@ -1,0 +1,29 @@
+# Development & runtime
+node_modules/
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+
+# User‑specific dev config
+.vscode/
+.idea/
+.agent/
+.gemini/
+.kiro/
+.codex/
+.opencode/
+
+# Third‑party reference material (copyrighted)
+reference/
+# ^ Includes Behance screenshots (ui-inspiration/), design‑reference images,
+# and the Stitch HTML mockup. Omitted from the public repo for copyright reasons.
+
+# Local verification files
+_local/
+
+# OS caches
+*.tmp
+*.swp
+*~

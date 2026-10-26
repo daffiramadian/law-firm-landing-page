@@ -1,4 +1,4 @@
-# Hartawati Law Firm: Work Package 5 (WP5) Continuity Guide
+# Daffi Law Firm: Work Package 5 (WP5) Continuity Guide
 
 > **Project State:**
 > - **WP1–WP4:** COMPLETED & committed
@@ -11,7 +11,7 @@
 ## 1. Copy-Paste Kickoff Prompt
 
 ```markdown
-We are continuing Work Package 5 (WP5: Dummy Data) for the Hartawati Law Firm website.
+We are continuing Work Package 5 (WP5: Dummy Data) for the Daffi Law Firm website.
 
 STATUS:
 - WP1 through WP4 are fully completed and committed.
@@ -36,7 +36,7 @@ All in `html/index.html`. Replace exactly as shown; add `data-dummy` on the near
 
 <!-- AFTER -->
 <img src="../assets/images/dummy/lawyer-portrait.webp"
-     alt="Hartawati, S.H., M.H., Advokat Pendiri Hartawati Law Firm"
+     alt="Daffi, S.H., M.H., Advokat Pendiri Daffi Law Firm"
      width="900" height="1200" loading="lazy" data-dummy>
 ```
 
@@ -46,7 +46,7 @@ All in `html/index.html`. Replace exactly as shown; add `data-dummy` on the near
 <h2 class="lawyer-name">[Placeholder] Nama Advokat, S.H.</h2>
 
 <!-- AFTER -->
-<h2 class="lawyer-name" data-dummy>Hartawati, S.H., M.H.</h2>
+<h2 class="lawyer-name" data-dummy>Daffi, S.H., M.H.</h2>
 ```
 
 **Lines 425–426** — Credential chips:
@@ -66,7 +66,7 @@ All in `html/index.html`. Replace exactly as shown; add `data-dummy` on the near
 [Placeholder] Profil singkat advokat dengan fokus pada litigasi komersial dan konsultasi hukum perusahaan.
 
 <!-- AFTER (data-dummy on the <p> tag) -->
-Hartawati, S.H., M.H. memiliki pengalaman lebih dari 15 tahun dalam pendampingan hukum korporat dan litigasi komersial di Indonesia. Berpendidikan dari Fakultas Hukum Universitas Negeri dan Pendidikan Profesi Advokat, beliau mendirikan kantor ini dengan komitmen pada integritas dan komunikasi yang jelas kepada setiap klien.
+Daffi, S.H., M.H. memiliki pengalaman lebih dari 15 tahun dalam pendampingan hukum korporat dan litigasi komersial di Indonesia. Berpendidikan dari Fakultas Hukum Universitas Negeri dan Pendidikan Profesi Advokat, beliau mendirikan kantor ini dengan komitmen pada integritas dan komunikasi yang jelas kepada setiap klien.
 ```
 
 ---
@@ -155,7 +155,7 @@ Also update any footer WhatsApp `href` from `62XXXXXXXXXX` → `6281200000000` w
 
 ## 3. After All Replacements: Create DUMMY_CONTENT.md
 
-Create `d:\hartawati-law-firm\DUMMY_CONTENT.md` with this content:
+Create `d:\daffi-law-firm\DUMMY_CONTENT.md` with this content:
 
 ```markdown
 # DUMMY_CONTENT.md
@@ -191,10 +191,10 @@ Replace with real content before publishing. Remove meta name="robots" noindex,n
 | Practice Row 1 | preview img | practice-korporat.webp | Real photo |
 | Practice Row 2–6 | (same pattern) | … | Real photos & descriptions |
 | Lawyer | portrait img | lawyer-portrait.webp | Real portrait photo |
-| Lawyer | name | Hartawati, S.H., M.H. | Real name |
+| Lawyer | name | Daffi, S.H., M.H. | Real name |
 | Lawyer | credential 1 | Advokat Terdaftar | Real credential |
 | Lawyer | credential 2 | Magister Hukum | Real credential |
-| Lawyer | bio | Hartawati, S.H., M.H. memiliki... | Real biography |
+| Lawyer | bio | Daffi, S.H., M.H. memiliki... | Real biography |
 | Process 01 | title | Konsultasi Awal | Keep or update |
 | Process 01 | description | Pertemuan untuk... | Real description |
 | Process 02–04 | (same pattern) | … | Real descriptions |

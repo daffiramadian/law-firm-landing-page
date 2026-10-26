@@ -1,4 +1,4 @@
-# Hartawati Law Firm: UI Upgrade — Execution Prompts
+# Daffi Law Firm: UI Upgrade — Execution Prompts
 
 > **This file supersedes the stage prompts in `/reference/UPGRADE.md` (section 6).**
 > The original `/reference/UPGRADE.md` remains the design spec and is read-only.
@@ -209,7 +209,7 @@ Restyle the existing contact section (keep the WhatsApp-first approach):
 FOOTER — background --espresso:
   - Border-top: 1px solid rgba(255,255,255,0.08)
   - Top portion: 3 columns — brand (logo + tagline), nav links, contact info. All text in --text-on-dark-soft, links hover to --text-on-dark. Do NOT use --accent here.
-  - GIANT WORDMARK at the bottom: the text "HARTAWATI" in:
+  - GIANT WORDMARK at the bottom: the text "DAFFI" in:
       font-size: clamp(4rem, 18vw, 16rem)
       font-family: var(--font-heading)
       font-weight: 300

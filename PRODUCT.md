@@ -12,7 +12,7 @@ Calon klien individu dan korporasi di Indonesia yang sedang mencari pendampingan
 
 ## Product Purpose
 
-Website profil Hartawati Law Firm untuk memperkenalkan firma dan membantu calon klien memutuskan untuk menghubungi Ibu pengguna sebagai advokat.
+Website profil Daffi Law Firm untuk memperkenalkan firma dan membantu calon klien memutuskan untuk menghubungi Ibu pengguna sebagai advokat.
 
 ## Positioning
 
@@ -27,7 +27,7 @@ Belum ada pembeda firma yang terverifikasi dan disetujui untuk diklaim. Fokus la
 
 ## Brand Commitments
 
-- Nama: Hartawati Law Firm.
+- Nama: Daffi Law Firm.
 - Bahasa: Indonesia.
 - Nada: profesional, jelas, dan informasional.
 

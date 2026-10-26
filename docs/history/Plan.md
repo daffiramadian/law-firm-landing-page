@@ -1,4 +1,4 @@
-# Hartawati Law Firm: Build Plan (Stitch → plain HTML/CSS/JS)
+# Daffi Law Firm: Build Plan (Stitch → plain HTML/CSS/JS)
 
 Status: Stitch design done. Next: turn it into the real project with OpenCode or Codex.
 
@@ -28,7 +28,7 @@ Status: Stitch design done. Next: turn it into the real project with OpenCode or
 - **Images hotlinked from `lh3.googleusercontent.com`** → temporary links, will break. Replace with local placeholder images.
 - **AI-generated portrait of a "senior female lawyer"** → must not ship. Replace with a labeled placeholder until a real photo exists.
 - **Fake form** (divs styled as inputs) → replace with WhatsApp-only contact, or a real `<form>` (decide in §3).
-- **Invented details that look real**: "Equity Tower Lantai 22, SCBD", `+62 21 5150 8899`, `counsel@hartawatilaw.co.id`, "Hartawati, S.H., LL.M.", "Perhimpunan Advokat Indonesia", "Fax", "© 2025", "Publikasi Hukum" link → replace with obvious placeholders (`[Placeholder] Alamat Kantor`, `+62 000 0000 0000`, etc.)
+- **Invented details that look real**: "Equity Tower Lantai 22, SCBD", `+62 21 5150 8899`, `counsel@daffilaw.co.id`, "Daffi, S.H., LL.M.", "Perhimpunan Advokat Indonesia", "Fax", "© 2025", "Publikasi Hukum" link → replace with obvious placeholders (`[Placeholder] Alamat Kantor`, `+62 000 0000 0000`, etc.)
 - **Labels left over from Stitch**: `[Stage 4 Preview]`, `Konsultasi Formal` → remove
 - **Claims to review with your mother**: "Kerahasiaan Terjaga", "100% Fokus", "000+ Kasus". Keep as placeholders only; advocate ethics rules restrict promotional claims.
 - **Mobile menu**: toggles `hidden` only. Add `aria-expanded`, close on link click, close on Esc.
@@ -51,14 +51,14 @@ Status: Stitch design done. Next: turn it into the real project with OpenCode or
 3. **Contact:** **WhatsApp button + phone + email only** (no form, no backend to maintain). Add a form later if needed.
 4. **Icons:** **inline SVG** (no icon font)
 5. **Fonts:** Google Fonts `<link>` for now; self-host later if you want
-6. **Logo:** text wordmark ("HARTAWATI / LAW FIRM") until a real logo exists
+6. **Logo:** text wordmark ("DAFFI / LAW FIRM") until a real logo exists
 
 ---
 
 ## 4. Target structure
 
 ```
-hartawati-law/
+daffi-law/
 ├── index.html
 ├── css/style.css
 ├── js/main.js
@@ -83,7 +83,7 @@ Setup (do this yourself, before starting the agent):
 ## 5. AGENTS.md (copy this into the project root)
 
 ```markdown
-# Hartawati Law Firm website
+# Daffi Law Firm website
 
 One-page marketing site for an Indonesian law firm. Indonesian language (lang="id").
 
@@ -187,3 +187,17 @@ Tips:
 3. Update the WhatsApp number (`wa.me/62...`), phone, email, address, map link
 4. Have your mother review every sentence for ethics compliance
 5. Re-run the Stage 7 audit, then deploy (Cloudflare Pages, Netlify, or GitHub Pages)
+---
+
+## 9. Round 2: Modernization & Spec-Driven Engineering (WP1 - WP6)
+
+In Round 2, the site underwent a structured UI modernization and production hardening using Work Packages (WP1–WP6) adhering to the strict design constraints in AGENTS.md:
+
+| Package | Focus | Key Deliverables & Outcome | Status |
+|:---|:---|:---|:---|
+| **WP1** | Header & Visual Polish | Corrected sticky header offset token, enclosed button arrow icons in 28px circular badges, trimmed hero tag pill to content width, applied caramel styling to stat icons. | ✅ Completed (`a16a7f8`) |
+| **WP2** | Practice Areas Controller | Replaced unstable height animation with fixed CSS grid rows; implemented single-active-row controller with pointer and keyboard listeners in `js/main.js`; decoupled preview images to ensure 0 layout shift. | ✅ Completed (`b3c9fd4`) |
+| **WP3** | Testimonials Marquee | Removed FAQ section; implemented accessible dual-row opposite-direction marquee with pause on hover/focus/button (WCAG 2.2.2) and static grid fallback for `prefers-reduced-motion`. | ✅ Completed (`e661723`) |
+| **WP4** | Nav Expansion & Framing | Expanded navbar to 7 sections matching DOM sequence; added 1100px/1440px responsive breakpoints with dynamic CTA shortening ("Konsultasi" vs "Mulai Konsultasi"); polished advocate framing. | ✅ Completed (`2528348`) |
+| **WP5** | Dummy Content Architecture | Implemented `data-dummy` attribute specification, root `DUMMY_CONTENT.md` registry, and `?dummy` outline inspection mode; generated 19 optimized Unsplash photos (<150KB WebP) with `CREDITS.md`. | ✅ Completed |
+| **WP6** | Final QA & GitHub Showcase | Viewport matrix verification (375px–1920px), zero horizontal overflow, 0 console errors, WCAG AA contrast, GitHub Pages entry point at root `index.html`, case study `README.md`. | ✅ Completed |

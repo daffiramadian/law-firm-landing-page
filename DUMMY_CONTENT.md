@@ -1,80 +1,58 @@
-# DUMMY_CONTENT.md
+# DUMMY_CONTENT.md — Daffi Law Firm
 
-All items below are dummy data marked with `data-dummy` in `html/index.html`.
-Replace with real content before publishing. Remove `<meta name="robots" content="noindex, nofollow">` after replacement.
+All items listed below contain realistic dummy content and are flagged with the `data-dummy` attribute in `index.html`.
+Before publishing to production, replace each dummy item with actual firm details and remove `<meta name="robots" content="noindex, nofollow">` from `<head>`.
 
-| Section | Element | Dummy Value | Replace With |
-|---|---|---|---|
-| Head | meta description | Layanan konsultasi... | Real description |
-| Head | og:description | Layanan konsultasi... | Real description |
-| Head | og:image | /assets/images/dummy/og-image.jpg | Real OG image |
-| Hero | pill tag | Advokat & Konsultan Hukum | Real credential tag |
-| Hero | hero-subtext | Layanan hukum profesional... | Real tagline |
-| Hero | CTA href (header) | wa.me/6281200000000 | Real WhatsApp number |
-| Hero | CTA href (hero) | wa.me/6281200000000 | Real WhatsApp number |
-| Hero | portrait img | /assets/images/dummy/hero-portrait.webp | Real portrait photo |
-| Hero | glass card text | Senin–Jumat, 09.00–17.00 | Real office hours |
-| Stats | Tahun Pengalaman | 15+ | Real number |
-| Stats | Perkara Ditangani | 300+ | Real number |
-| Stats | Klien Didampingi | 250+ | Real number |
-| Stats | Bidang Praktik | 6 | Real number |
-| About | about-statement | Komitmen pada... | Real statement |
-| About | value 01 title | Integritas | Real value name |
-| About | value 01 text | Standar etika... | Real description |
-| About | value 02 title | Keahlian | Real value name |
-| About | value 02 text | Pengalaman luas... | Real description |
-| About | about-subtext | Kami memahami... | Real quote |
-| About | about-photo | /assets/images/dummy/about-office.webp | Real office photo |
-| Practice | practice-header-text | Keahlian kami... | Real description |
-| Practice Row 1 | title | Hukum Korporat | Keep or update |
-| Practice Row 1 | category | Korporasi | Keep or update |
-| Practice Row 1 | description | Pendirian badan usaha... | Real description |
-| Practice Row 1 | preview img | practice-korporat.webp | Real photo |
-| Practice Row 2 | title | Kontrak Bisnis | Keep or update |
-| Practice Row 2 | category | Komersial | Keep or update |
-| Practice Row 2 | description | Penyusunan, negosiasi... | Real description |
-| Practice Row 2 | preview img | practice-kontrak.webp | Real photo |
-| Practice Row 3 | title | Sengketa Perdata | Keep or update |
-| Practice Row 3 | category | Litigasi | Keep or update |
-| Practice Row 3 | description | Gugatan wanprestasi... | Real description |
-| Practice Row 3 | preview img | practice-sengketa.webp | Real photo |
-| Practice Row 4 | title | Properti & Tanah | Keep or update |
-| Practice Row 4 | category | Properti | Keep or update |
-| Practice Row 4 | description | Jual beli tanah... | Real description |
-| Practice Row 4 | preview img | practice-properti.webp | Real photo |
-| Practice Row 5 | title | Ketenagakerjaan | Keep or update |
-| Practice Row 5 | category | Ketenagakerjaan | Keep or update |
-| Practice Row 5 | description | PHK, sengketa upah... | Real description |
-| Practice Row 5 | preview img | practice-ketenagakerjaan.webp | Real photo |
-| Practice Row 6 | title | Perizinan & Regulasi | Keep or update |
-| Practice Row 6 | category | Korporasi | Keep or update |
-| Practice Row 6 | description | Izin usaha, NIB... | Real description |
-| Practice Row 6 | preview img | practice-perizinan.webp | Real photo |
-| Lawyer | portrait img | lawyer-portrait.webp | Real portrait photo |
-| Lawyer | name | Hartawati, S.H., M.H. | Real name |
-| Lawyer | credential 1 | Advokat Terdaftar | Real credential |
-| Lawyer | credential 2 | Magister Hukum | Real credential |
-| Lawyer | bio | Hartawati, S.H., M.H. memiliki... | Real biography |
-| Process 01 | title | Konsultasi Awal | Keep or update |
-| Process 01 | description | Pertemuan untuk... | Real description |
-| Process 02 | title | Analisis Perkara | Keep or update |
-| Process 02 | description | Evaluasi dokumen... | Real description |
-| Process 03 | title | Strategi | Keep or update |
-| Process 03 | description | Penyusunan rencana... | Real description |
-| Process 04 | title | Pendampingan | Keep or update |
-| Process 04 | description | Pelaksanaan strategi... | Real description |
-| Testimonials | card 1 | Budi Santoso, PT Maju Jaya | Verify or replace |
-| Testimonials | card 2 | Sarah Wijaya, Startup Founder | Verify or replace |
-| Testimonials | card 3 | Ahmad Hidayat, Property Developer | Verify or replace |
-| Testimonials | card 4 | Linda Chen, Restaurant Owner | Verify or replace |
-| Testimonials | card 5 | Dian Pramesti, Freelancer | Verify or replace |
-| Testimonials | card 6 | Rizki Fauzan, Tech Consultant | Verify or replace |
-| Testimonials | card 7 | Siti Nurhaliza, Small Business Owner | Verify or replace |
-| Testimonials | card 8 | Michael Tan, Importer | Verify or replace |
-| Contact | h2 heading | Mulai Diskusi Hukum Anda | Real heading |
-| Contact | email | halo@example.com | Real email |
-| Contact | phone | +62 21 0000 0000 | Real phone |
-| Contact | address | Jl. Merdeka Raya No. 12... | Real address |
-| Contact | WhatsApp href | wa.me/6281200000000 | Real WhatsApp |
-| Footer | tagline | Pendampingan hukum... | Real tagline |
-| Footer | email | halo@example.com | Real email |
+> **Note for Design Review:** Open `index.html?dummy` in your browser to outline all dummy elements with a dashed red border.
+
+| File | Section | Item | Current Dummy Value | Replace With |
+|:---|:---|:---|:---|:---|
+| `index.html` | Head | Description | `Layanan konsultasi dan advokat profesional di Indonesia...` | Real firm meta description |
+| `index.html` | Head | OG Description | `Layanan konsultasi dan advokat profesional di Indonesia...` | Real OpenGraph description |
+| `index.html` | Head | OG Image | `./assets/images/dummy/og-image.jpg` | Real branded social share image |
+| `index.html` | Header | WhatsApp CTA | `https://wa.me/6281200000000` | Real firm WhatsApp link |
+| `index.html` | Hero | Pill Tag | `Advokat & Konsultan Hukum` | Real primary practice headline tag |
+| `index.html` | Hero | Subtext | `Layanan hukum profesional untuk individu dan korporasi...` | Real hero tagline |
+| `index.html` | Hero | Hero Button | `https://wa.me/6281200000000` | Real firm contact link |
+| `index.html` | Hero | Glass Info Card | `Konsultasi Awal · Senin–Jumat, 09.00–17.00` | Real office consultation hours |
+| `index.html` | Hero | Portrait Image | `./assets/images/dummy/hero-portrait.webp` | Real professional portrait of lead advocate |
+| `index.html` | Stats | Stat 1 | `15+` / `Tahun Pengalaman` | Real verified years in practice |
+| `index.html` | Stats | Stat 2 | `300+` / `Perkara Ditangani` | Real verified case count |
+| `index.html` | Stats | Stat 3 | `250+` / `Klien Didampingi` | Real verified client count |
+| `index.html` | Stats | Stat 4 | `6` / `Bidang Praktik` | Real number of active practice areas |
+| `index.html` | About | Statement | `Komitmen pada keunggulan hukum dan kepercayaan klien...` | Real partner mission statement |
+| `index.html` | About | Value 1 | `Integritas` · `Standar etika dan transparansi...` | Real firm core value 1 |
+| `index.html` | About | Value 2 | `Keahlian` · `Pengalaman luas dalam litigasi...` | Real firm core value 2 |
+| `index.html` | About | Narrative | `Kami memahami bahwa setiap klien memiliki kebutuhan unik...` | Real firm background narrative |
+| `index.html` | About | Photo | `./assets/images/dummy/about-office.webp` | Real photograph of law office interior |
+| `index.html` | Practice | Header text | `Keahlian kami mencakup berbagai disiplin hukum...` | Real practice area overview text |
+| `index.html` | Practice | Row 1 (Korporat) | `Hukum Korporat` · `Korporasi` · `practice-korporat.webp` | Verified corporate practice details |
+| `index.html` | Practice | Row 2 (Litigasi) | `Litigasi Komersial` · `Litigasi` · `practice-litigasi.webp` | Verified commercial litigation details |
+| `index.html` | Practice | Row 3 (Arbitrase) | `Arbitrase & Mediasi` · `Penyelesaian Sengketa` · `practice-arbitrase.webp` | Verified ADR details |
+| `index.html` | Practice | Row 4 (Perburuhan) | `Hukum Perburuhan` · `Ketenagakerjaan` · `practice-perburuhan.webp` | Verified labor law details |
+| `index.html` | Practice | Row 5 (Properti) | `Hukum Properti` · `Properti` · `practice-properti.webp` | Verified real estate legal details |
+| `index.html` | Practice | Row 6 (Konsultasi) | `Konsultasi Umum` · `Konsultasi` · `practice-konsultasi.webp` | Verified general consultation details |
+| `index.html` | Lawyer | Portrait Image | `./assets/images/dummy/lawyer-portrait.webp` | Real portrait of Advokat Daffi |
+| `index.html` | Lawyer | Name | `Daffi, S.H., M.H.` | Real advocate name and bar credentials |
+| `index.html` | Lawyer | Credential Chips | `Advokat Terdaftar` · `Magister Hukum` | Real bar membership & degree credentials |
+| `index.html` | Lawyer | Biography | `Berpengalaman mendampingi individu dan pelaku usaha...` | Real advocate biography and education |
+| `index.html` | Process | Step 1 | `Konsultasi Awal` | Real client intake step 1 description |
+| `index.html` | Process | Step 2 | `Analisis Perkara` | Real legal analysis step 2 description |
+| `index.html` | Process | Step 3 | `Strategi` | Real strategy step 3 description |
+| `index.html` | Process | Step 4 | `Pendampingan` | Real execution & counsel step 4 description |
+| `index.html` | Testimonials | Card 1 | `Budi S.` · `Pemilik Usaha Kecil` · `testimonial-1.webp` | Real client review or remove if restricted |
+| `index.html` | Testimonials | Card 2 | `Rina A.` · `Karyawan Swasta` · `testimonial-2.webp` | Real client review or remove if restricted |
+| `index.html` | Testimonials | Card 3 | `Agus P.` · `Wiraswasta` · `testimonial-3.webp` | Real client review or remove if restricted |
+| `index.html` | Testimonials | Card 4 | `Dewi L.` · `Ibu Rumah Tangga` · `testimonial-4.webp` | Real client review or remove if restricted |
+| `index.html` | Testimonials | Card 5 | `Hendra W.` · `Direktur Perusahaan Distribusi` · `testimonial-5.webp` | Real client review or remove if restricted |
+| `index.html` | Testimonials | Card 6 | `Maya K.` · `Pemilik Properti` · `testimonial-6.webp` | Real client review or remove if restricted |
+| `index.html` | Testimonials | Card 7 | `Andi R.` · `Pengusaha Kuliner` · `testimonial-7.webp` | Real client review or remove if restricted |
+| `index.html` | Testimonials | Card 8 | `Sari N.` · `Pegawai Swasta` · `testimonial-8.webp` | Real client review or remove if restricted |
+| `index.html` | Contact | Title | `Mulai Diskusi Hukum Anda` | Real contact section heading |
+| `index.html` | Contact | Email | `halo@example.com` | Real firm email inbox |
+| `index.html` | Contact | Phone | `+62 21 0000 0000` | Real office telephone number |
+| `index.html` | Contact | Address | `Jl. Merdeka Raya No. 12, Jakarta Selatan 12000` | Real office physical street address |
+| `index.html` | Contact | WhatsApp Link | `https://wa.me/6281200000000` | Real office WhatsApp chat number |
+| `index.html` | Footer | Tagline | `Pendampingan hukum yang tenang dan beretika...` | Real firm footer mission |
+| `index.html` | Footer | Email Link | `halo@example.com` | Real firm footer contact email |
+| `index.html` | Footer | Disclaimer | `Demo website. All content is fictional.` | Remove banner upon launch with real data |
