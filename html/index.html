@@ -90,149 +90,136 @@
   <!-- MAIN -->
   <main id="main">
     <!-- HERO SECTION -->
-    <section class="hero" id="hero">
+    <section id="hero" aria-label="Hero">
       <div class="container">
-        <div class="hero-content">
-          <!-- Eyebrow -->
-          <div class="hero-eyebrow">
-            <span class="hero-eyebrow-text">[Placeholder] Hartawati Law Firm · Jakarta, Indonesia</span>
-          </div>
+        <div class="hero-card">
+          <div class="hero-card-inner">
 
-          <!-- Headline -->
-          <h1>
-            KEPASTIAN HUKUM <span class="accent">DENGAN INTEGRITAS</span> DAN KEBIJAKSANAAN
-          </h1>
+            <!-- LEFT: content column -->
+            <div class="hero-col-content">
+              <span class="pill-tag pill-tag--on-dark reveal">[Placeholder] Advokat</span>
 
-          <!-- Subtext -->
-          <p class="hero-subtext">
-            [Placeholder] Pendampingan hukum yang objektif dan terstruktur untuk individu dan korporasi di Indonesia.
-          </p>
+              <h1>
+                <span class="hero-line">Pendampingan Hukum</span>
+                <span class="hero-line">yang <em class="accent-italic">Jelas</em> dan <em class="accent-italic">Terpercaya</em></span>
+              </h1>
 
-          <!-- CTA Buttons -->
-          <div class="hero-buttons">
-            <a href="https://wa.me/62XXXXXXXXXX" class="btn btn-solid" target="_blank" rel="noopener noreferrer">
-              <!-- Chat icon -->
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="currentColor"/>
+              <p class="hero-subtext">
+                [Placeholder] Layanan hukum profesional untuk individu dan korporasi di Indonesia, berlandaskan integritas dan kerahasiaan.
+              </p>
+
+              <div class="hero-actions">
+                <a href="https://wa.me/62XXXXXXXXXX" class="btn-arrow btn-arrow--dark" target="_blank" rel="noopener noreferrer">
+                  Hubungi Advokat
+                  <span class="btn-arrow-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </a>
+                <a href="#tentang-kami" class="hero-text-link">Pelajari Lebih Lanjut</a>
+              </div>
+
+              <!-- Floating glass card -->
+              <div class="hero-glass-card" aria-label="Jam konsultasi">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                [Placeholder] Konsultasi Awal · Senin–Jumat, 09.00–17.00
+              </div>
+            </div>
+
+            <!-- RIGHT: portrait column -->
+            <div class="hero-col-portrait" aria-hidden="true">
+              <div class="hero-portrait-wrap">
+                <img
+                  src="../assets/images/placeholders/portrait-hero.svg"
+                  alt=""
+                  class="hero-portrait-img"
+                >
+              </div>
+            </div>
+
+          </div><!-- /.hero-card-inner -->
+
+          <!-- STATS STRIP -->
+          <div class="hero-stats-strip" role="list" aria-label="Statistik kantor">
+            <div class="hero-stat reveal" role="listitem">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 2v4M16 2v4M3 10h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
-              Hubungi Advokat
-            </a>
-            <a href="#tentang-kami" class="btn btn-outline">
-              Pelajari Layanan
-              <!-- Arrow down icon -->
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 4L12 20M12 20L18 14M12 20L6 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <span class="hero-stat-value" aria-label="[Placeholder] 00+"><span class="hero-stat-placeholder" aria-hidden="true">[Placeholder]</span><span class="hero-stat-number" aria-hidden="true">00+</span></span>
+              <span class="hero-stat-label">Tahun Pengalaman</span>
+            </div>
+            <div class="hero-stat reveal" role="listitem">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6z" stroke="currentColor" stroke-width="1.5"/>
               </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Hero Image -->
-        <div class="hero-image-wrapper">
-          <div class="hero-image">
-            <img src="../assets/images/placeholders/hero.svg" alt="[Placeholder] Suasana kantor advokat">
-          </div>
-        </div>
-
-        <!-- Stats Cards -->
-        <div class="hero-stats">
-          <div class="stat-card">
-            <div class="stat-value-wrapper">
-              <span class="stat-value">00+</span>
-              <span class="stat-label">Tahun</span>
+              <span class="hero-stat-value" aria-label="[Placeholder] 00+"><span class="hero-stat-placeholder" aria-hidden="true">[Placeholder]</span><span class="hero-stat-number" aria-hidden="true">00+</span></span>
+              <span class="hero-stat-label">Perkara Ditangani</span>
             </div>
-            <p class="stat-description">
-              [Placeholder] Tahun Pengalaman dalam Litigasi & Konsultasi Komersial Terpadu
-            </p>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-value-wrapper">
-              <span class="stat-value stat-value--on-surface">000+</span>
-              <span class="stat-label">Kasus</span>
+            <div class="hero-stat reveal" role="listitem">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span class="hero-stat-value" aria-label="[Placeholder] 00+"><span class="hero-stat-placeholder" aria-hidden="true">[Placeholder]</span><span class="hero-stat-number" aria-hidden="true">00+</span></span>
+              <span class="hero-stat-label">Klien Dilayani</span>
             </div>
-            <p class="stat-description">
-              [Placeholder] Perkara Ditangani dengan Penyelesaian Strategis & Terukur
-            </p>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-value-wrapper">
-              <span class="stat-value stat-value--primary">Fokus Penuh</span>
-              <span class="stat-label">Fokus</span>
+            <div class="hero-stat reveal" role="listitem">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l2.5 7H21l-5.7 4.1 2.2 6.9L12 16l-5.5 4 2.2-6.9L3 9h6.5L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <span class="hero-stat-value" aria-label="[Placeholder] 00+"><span class="hero-stat-placeholder" aria-hidden="true">[Placeholder]</span><span class="hero-stat-number" aria-hidden="true">00+</span></span>
+              <span class="hero-stat-label">Bidang Praktik</span>
             </div>
-            <p class="stat-description">
-                [Placeholder] Komitmen profesional berlandaskan etika dan kerahasiaan.
-            </p>
-          </div>
-        </div>
-      </div>
+          </div><!-- /.hero-stats-strip -->
+
+        </div><!-- /.hero-card -->
+      </div><!-- /.container -->
     </section>
 
     <!-- ABOUT SECTION -->
     <section class="about" id="tentang-kami">
       <div class="container">
+        <h2 class="visually-hidden">Tentang Kami</h2>
         <div class="about-container">
-          <!-- About text & values -->
-          <div class="about-content">
-            <div>
-              <h2 class="about-title">[Placeholder] Komitmen Pada Keunggulan Hukum</h2>
-              <p class="about-description">
-                [Placeholder] Pendampingan hukum komprehensif yang mengutamakan kepercayaan klien, kerahasiaan, dan standar etika.
-              </p>
-            </div>
-
-            <!-- Value cards -->
-            <div class="values-grid">
-              <div class="value-card">
-                <div class="value-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M12 2L15.09 8.26H22L17.18 12.5L18.95 18.74L12 14.13L5.05 18.74L6.82 12.5L2 8.26H8.91L12 2Z" fill="currentColor"/>
-                  </svg>
+          <!-- LEFT COLUMN: Statement + value points -->
+          <div class="about-left">
+            <p class="about-statement">
+              [Placeholder] Komitmen pada <em class="accent-italic-light">keunggulan hukum</em> dan kepercayaan klien adalah inti dari setiap mandat kami.
+            </p>
+            <div class="about-values">
+              <div class="about-value">
+                <span class="about-value-number">01</span>
+                <div class="about-value-content">
+                  <h3 class="type-label">[Placeholder] Integritas</h3>
+                  <p>[Placeholder] Standar etika dan transparansi dalam setiap mandat.</p>
                 </div>
-                <h3 class="value-title">[Placeholder] Integritas</h3>
-            <p class="value-text">[Placeholder] Standar etika dan transparansi dalam setiap mandat.</p>
               </div>
-              <div class="value-card">
-                <div class="value-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
-                  </svg>
+              <div class="about-value">
+                <span class="about-value-number">02</span>
+                <div class="about-value-content">
+                  <h3 class="type-label">[Placeholder] Keahlian</h3>
+                  <p>[Placeholder] Pengalaman luas dalam litigasi, korporat, dan konsultasi strategis.</p>
                 </div>
-                <h3 class="value-title">[Placeholder] Keahlian</h3>
-                <p class="value-text">[Placeholder] Pengalaman luas dalam litigasi, korporat, dan konsultasi strategis.</p>
               </div>
             </div>
           </div>
 
-          <!-- About image -->
-          <div class="about-image-wrapper">
-            <div class="about-image-main">
-            <img src="../assets/images/placeholders/about.svg" alt="[Placeholder] Tim advokat Hartawati Law Firm">
-            </div>
-          </div>
-        </div>
-
-        <!-- Room gallery -->
-        <div class="room-gallery">
-          <div class="room-grid">
-            <div class="room-card">
-              <div class="room-image">
-                <img src="../assets/images/placeholders/room-1.svg" alt="[Placeholder] Ruang konsultasi">
-              </div>
-              <p class="room-caption">[Placeholder] Ruang Konsultasi</p>
-            </div>
-            <div class="room-card">
-              <div class="room-image">
-                <img src="../assets/images/placeholders/room-2.svg" alt="[Placeholder] Ruang diskusi klien">
-              </div>
-              <p class="room-caption">[Placeholder] Ruang Diskusi</p>
-            </div>
-            <div class="room-card">
-              <div class="room-image">
-                <img src="../assets/images/placeholders/room-3.svg" alt="[Placeholder] Perpustakaan hukum">
-              </div>
-              <p class="room-caption">[Placeholder] Perpustakaan</p>
+          <!-- RIGHT COLUMN: Quote mark + text + photo -->
+          <div class="about-right">
+            <div class="about-quote" aria-hidden="true">"</div>
+            <p class="about-subtext">
+              [Placeholder] Kami memahami bahwa setiap klien memiliki kebutuhan unik. Pendekatan kami adalah mendengarkan dengan cermat, menganalisis mendalam, dan memberikan solusi hukum yang tepat sasaran.
+            </p>
+            <div class="about-photo-wrapper">
+              <div class="about-photo-shape"></div>
+              <img src="../assets/images/placeholders/about-photo.svg" alt="[Placeholder] Foto advokat">
             </div>
           </div>
         </div>
@@ -242,124 +229,170 @@
     <!-- PRACTICE AREAS SECTION -->
     <section class="practice" id="bidang-praktik">
       <div class="container">
-        <!-- Section header -->
-        <div class="practice-header">
-          <div class="section-label">
-            <span class="section-label-text">Bidang Praktik</span>
+        <!-- Header row -->
+        <div class="practice-header-row">
+          <div class="practice-header-left">
+            <span class="pill-tag reveal">Bidang Praktik</span>
+            <h2 class="reveal">
+              Layanan Hukum <br>
+              yang <em class="accent-italic-light">Komprehensif</em>
+            </h2>
           </div>
-          <h2>[Placeholder] Layanan Hukum Komprehensif</h2>
-          <p>[Placeholder] Keahlian kami mencakup berbagai disiplin hukum untuk mendukung individu dan korporasi mencapai tujuan hukum mereka.</p>
+          <div class="practice-header-right">
+            <p class="practice-header-text">
+              [Placeholder] Keahlian kami mencakup berbagai disiplin hukum untuk mendukung individu dan korporasi mencapai tujuan hukum mereka.
+            </p>
+            <a href="#contact" class="btn-arrow btn-arrow--light">
+              Konsultasi Bidang
+              <span class="btn-arrow-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
         </div>
 
-        <!-- Practice cards -->
-        <div class="practice-grid">
-          <!-- Card 1 -->
-          <div class="practice-card">
-            <span class="practice-num">01</span>
-            <div class="practice-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M19 3H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.3-1.54c-.3-.36-.86-.36-1.15 0-.3.36-.3.95 0 1.31l2 2.38c.3.36.86.36 1.15 0l4.3-5.38c.3-.36.3-.95 0-1.31-.29-.36-.86-.36-1.15 0z" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3>[Placeholder] Hukum Korporat</h3>
-            <p class="practice-description">[Placeholder] Pendampingan dalam pendirian, merger, akuisisi, dan tata kelola perusahaan.</p>
-            <a href="https://wa.me/62XXXXXXXXXX" class="practice-link" target="_blank" rel="noopener noreferrer">
-              Konsultasi Layanan
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+        <!-- Column headers -->
+        <div class="practice-column-headers">
+          <span class="practice-col-label">Bidang</span>
+          <span class="practice-col-label">Kategori</span>
+          <span class="practice-col-label practice-col-label--visually-hidden">Aksi</span>
+        </div>
 
-          <!-- Card 2 -->
-          <div class="practice-card">
-            <span class="practice-num">02</span>
-            <div class="practice-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
-              </svg>
+        <!-- List rows -->
+        <div class="practice-list" role="list">
+          <!-- Row 1 -->
+          <a href="#contact" class="practice-row reveal" aria-labelledby="practice-title-1">
+            <div class="practice-row-inner">
+              <span class="practice-row-number">01</span>
+              <h3 class="practice-row-title" id="practice-title-1">
+                [Placeholder] Hukum Korporat
+              </h3>
+              <span class="pill-tag pill-tag--outline">[Placeholder] Bisnis</span>
+              <div class="practice-row-arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="practice-row-description">
+                [Placeholder] Deskripsi singkat bidang hukum ini.
+              </div>
+              <div class="practice-row-preview" aria-hidden="true">
+                <img src="../assets/images/placeholders/practice-preview.svg" alt="">
+              </div>
             </div>
-            <h3>[Placeholder] Litigasi Komersial</h3>
-            <p class="practice-description">[Placeholder] Representasi di pengadilan untuk perselisihan kontrak, kemitraan, dan sengketa bisnis.</p>
-            <a href="https://wa.me/62XXXXXXXXXX" class="practice-link" target="_blank" rel="noopener noreferrer">
-              Konsultasi Layanan
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+          </a>
 
-          <!-- Card 3 -->
-          <div class="practice-card">
-            <span class="practice-num">03</span>
-            <div class="practice-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" fill="currentColor"/>
-              </svg>
+          <!-- Row 2 -->
+          <a href="#contact" class="practice-row reveal" aria-labelledby="practice-title-2">
+            <div class="practice-row-inner">
+              <span class="practice-row-number">02</span>
+              <h3 class="practice-row-title" id="practice-title-2">
+                [Placeholder] Litigasi Komersial
+              </h3>
+              <span class="pill-tag pill-tag--outline">[Placeholder] Sengketa</span>
+              <div class="practice-row-arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="practice-row-description">
+                [Placeholder] Deskripsi singkat bidang hukum ini.
+              </div>
+              <div class="practice-row-preview" aria-hidden="true">
+                <img src="../assets/images/placeholders/practice-preview.svg" alt="">
+              </div>
             </div>
-            <h3>[Placeholder] Arbitrase & Mediasi</h3>
-            <p class="practice-description">[Placeholder] Penyelesaian sengketa alternatif dengan perhatian pada efisiensi dan kerahasiaan.</p>
-            <a href="https://wa.me/62XXXXXXXXXX" class="practice-link" target="_blank" rel="noopener noreferrer">
-              Konsultasi Layanan
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+          </a>
 
-          <!-- Card 4 -->
-          <div class="practice-card">
-            <span class="practice-num">04</span>
-            <div class="practice-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M14 6H10V4h4m4.59 6.41l-1.42-1.41-5.25 5.25-1.42-1.41-1.41 1.41 2.83 2.83 6.66-6.67zM19 13h-8v2h8v-2zm0-4h-8v2h8V9zM4 21h16v-2H4v2z" fill="currentColor"/>
-              </svg>
+          <!-- Row 3 -->
+          <a href="#contact" class="practice-row reveal" aria-labelledby="practice-title-3">
+            <div class="practice-row-inner">
+              <span class="practice-row-number">03</span>
+              <h3 class="practice-row-title" id="practice-title-3">
+                [Placeholder] Arbitrase & Mediasi
+              </h3>
+              <span class="pill-tag pill-tag--outline">[Placeholder] Alternatif</span>
+              <div class="practice-row-arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="practice-row-description">
+                [Placeholder] Deskripsi singkat bidang hukum ini.
+              </div>
+              <div class="practice-row-preview" aria-hidden="true">
+                <img src="../assets/images/placeholders/practice-preview.svg" alt="">
+              </div>
             </div>
-            <h3>[Placeholder] Hukum Perburuhan</h3>
-            <p class="practice-description">[Placeholder] Konsultasi dan representasi dalam hubungan kerja, peraturan ketenagakerjaan, dan pembayaran tunjangan.</p>
-            <a href="https://wa.me/62XXXXXXXXXX" class="practice-link" target="_blank" rel="noopener noreferrer">
-              Konsultasi Layanan
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+          </a>
 
-          <!-- Card 5 -->
-          <div class="practice-card">
-            <span class="practice-num">05</span>
-            <div class="practice-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 20c-4.962 0-9-4.038-9-9s4.038-9 9-9 9 4.038 9 9-4.038 9-9 9zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V8z" fill="currentColor"/>
-              </svg>
+          <!-- Row 4 -->
+          <a href="#contact" class="practice-row reveal" aria-labelledby="practice-title-4">
+            <div class="practice-row-inner">
+              <span class="practice-row-number">04</span>
+              <h3 class="practice-row-title" id="practice-title-4">
+                [Placeholder] Hukum Perburuhan
+              </h3>
+              <span class="pill-tag pill-tag--outline">[Placeholder] Ketenagakerjaan</span>
+              <div class="practice-row-arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="practice-row-description">
+                [Placeholder] Deskripsi singkat bidang hukum ini.
+              </div>
+              <div class="practice-row-preview" aria-hidden="true">
+                <img src="../assets/images/placeholders/practice-preview.svg" alt="">
+              </div>
             </div>
-            <h3>[Placeholder] Hukum Properti</h3>
-            <p class="practice-description">[Placeholder] Penanganan transaksi tanah, bangunan, hak asasi properti, dan sengketa tanah.</p>
-            <a href="https://wa.me/62XXXXXXXXXX" class="practice-link" target="_blank" rel="noopener noreferrer">
-              Konsultasi Layanan
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+          </a>
 
-          <!-- Card 6 -->
-          <div class="practice-card">
-            <span class="practice-num">06</span>
-            <div class="practice-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/>
-              </svg>
+          <!-- Row 5 -->
+          <a href="#contact" class="practice-row reveal" aria-labelledby="practice-title-5">
+            <div class="practice-row-inner">
+              <span class="practice-row-number">05</span>
+              <h3 class="practice-row-title" id="practice-title-5">
+                [Placeholder] Hukum Properti
+              </h3>
+              <span class="pill-tag pill-tag--outline">[Placeholder] Properti</span>
+              <div class="practice-row-arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="practice-row-description">
+                [Placeholder] Deskripsi singkat bidang hukum ini.
+              </div>
+              <div class="practice-row-preview" aria-hidden="true">
+                <img src="../assets/images/placeholders/practice-preview.svg" alt="">
+              </div>
             </div>
-            <h3>[Placeholder] Konsultasi Umum</h3>
-            <p class="practice-description">[Placeholder] Konsultasi strategis untuk berbagai kebutuhan hukum bisnis dan pribadi lainnya.</p>
-            <a href="https://wa.me/62XXXXXXXXXX" class="practice-link" target="_blank" rel="noopener noreferrer">
-              Konsultasi Layanan
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+          </a>
+
+          <!-- Row 6 -->
+          <a href="#contact" class="practice-row reveal" aria-labelledby="practice-title-6">
+            <div class="practice-row-inner">
+              <span class="practice-row-number">06</span>
+              <h3 class="practice-row-title" id="practice-title-6">
+                [Placeholder] Konsultasi Umum
+              </h3>
+              <span class="pill-tag pill-tag--outline">[Placeholder] Umum</span>
+              <div class="practice-row-arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="practice-row-description">
+                [Placeholder] Deskripsi singkat bidang hukum ini.
+              </div>
+              <div class="practice-row-preview" aria-hidden="true">
+                <img src="../assets/images/placeholders/practice-preview.svg" alt="">
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -377,7 +410,7 @@
 
         <!-- Bio -->
         <div class="lawyer-content">
-          <div class="section-label">
+          <div class="section-label reveal">
             <span class="section-label-text">Profil Advokat</span>
           </div>
           <h2 class="lawyer-name">[Placeholder] Nama Advokat, S.H.</h2>
@@ -393,20 +426,104 @@
     </div>
   </section>
 
+    <!-- PROCESS SECTION -->
+    <section class="process" id="alur-penanganan">
+      <div class="container">
+        <div class="process-header">
+          <span class="pill-tag reveal">Alur Penanganan</span>
+          <h2 class="reveal">Proses <em class="accent-italic-light">Pendampingan</em> Hukum</h2>
+        </div>
+
+        <div class="process-steps">
+          <svg class="process-connector" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M140 120C210 24 290 24 360 120S510 216 600 120S770 24 840 120S990 216 1060 120" />
+          </svg>
+          <div class="process-step">
+            <div class="process-step-card reveal">
+              <div class="process-step-number">01</div>
+              <h3 class="process-step-title">[Placeholder] Konsultasi Awal</h3>
+              <p class="process-step-description">[Placeholder] Pertemuan dengan klien untuk memahami kebutuhan dan situasi hukum.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-card reveal">
+              <div class="process-step-number">02</div>
+              <h3 class="process-step-title">[Placeholder] Analisis Perkara</h3>
+              <p class="process-step-description">[Placeholder] Evaluasi mendalam terhadap dokumen dan regulasi yang berlaku.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-card reveal">
+              <div class="process-step-number">03</div>
+              <h3 class="process-step-title">[Placeholder] Strategi</h3>
+              <p class="process-step-description">[Placeholder] Pengembangan rencana aksi dan strategi penanganan yang optimal.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-card reveal">
+              <div class="process-step-number">04</div>
+              <h3 class="process-step-title">[Placeholder] Pendampingan</h3>
+              <p class="process-step-description">[Placeholder] Eksekusi penuh dan dukungan hingga penyelesaian perkara.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-panel">
+        <div class="pill-tag reveal">Pertanyaan yang Sering Diajukan</div>
+        <h2 class="reveal">[Placeholder] Informasi Umum</h2>
+        <a href="#contact" class="btn-arrow">
+          Butuh Jawaban Lebih Lanjut?
+          <span class="btn-arrow-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+        <div class="faq-accordion">
+          <details open class="reveal">
+            <summary>[Placeholder] Apa yang terjadi pada konsultasi pertama?<span class="icon"></span></summary>
+            <div class="answer"><p>[Placeholder] Penjelasan mengenai alur konsultasi pertama dan persiapan dokumen.</p></div>
+          </details>
+          <details class="reveal">
+            <summary>[Placeholder] Berapa biaya layanan hukum?<span class="icon"></span></summary>
+            <div class="answer"><p>[Placeholder] Informasi transparan mengenai struktur biaya layanan hukum kami.</p></div>
+          </details>
+          <details class="reveal">
+            <summary>[Placeholder] Apakah informasi saya terjaga kerahasiaannya?<span class="icon"></span></summary>
+            <div class="answer"><p>[Placeholder] Penegasan komitmen kami terhadap kerahasiaan klien sesuai kode etik.</p></div>
+          </details>
+          <details class="reveal">
+            <summary>[Placeholder] Berapa lama penanganan perkara?<span class="icon"></span></summary>
+            <div class="answer"><p>[Placeholder] Estimasi durasi berdasarkan kompleksitas perkara.</p></div>
+          </details>
+          <details class="reveal">
+            <summary>[Placeholder] Dokumen apa yang perlu disiapkan?<span class="icon"></span></summary>
+            <div class="answer"><p>[Placeholder] Daftar dokumen dasar yang diperlukan untuk diskusi awal.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT SECTION -->
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-container">
-        <div class="section-label">
+        <div class="section-label reveal">
           <span class="section-label-text">Kontak Kami</span>
         </div>
-        <h2>[Placeholder] Diskusi Awal</h2>
-        <p class="contact-intro">
-          [Placeholder] Hubungi kami untuk konsultasi awal mengenai kebutuhan hukum Anda. Kami akan mendengarkan dengan saksama dan memberikan gambaran strategi yang tepat.
-        </p>
-
+        <h2 class="reveal">[Placeholder] Diskusi Awal <span class="accent-italic-light">Hukum Anda</span></h2>
+        
         <div class="contact-details">
-          <div class="contact-row">
+          <div class="contact-row reveal">
             <div class="contact-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
@@ -417,8 +534,7 @@
               <div class="contact-value"><a href="mailto:email@example.invalid">[Placeholder] email@example.invalid</a></div>
             </div>
           </div>
-
-          <div class="contact-row">
+          <div class="contact-row reveal">
             <div class="contact-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
@@ -429,8 +545,7 @@
               <div class="contact-value"><a href="tel:+62000000000">+62 000 0000 0000</a></div>
             </div>
           </div>
-
-          <div class="contact-row">
+          <div class="contact-row reveal">
             <div class="contact-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
@@ -438,17 +553,18 @@
             </div>
             <div class="contact-info">
               <div class="contact-label">Alamat</div>
-              <div class="contact-value">[Placeholder] Alamat Kantor, Jakarta, Indonesia</div>
+              <div class="contact-value">[Placeholder] Alamat Kantor, Jakarta</div>
             </div>
           </div>
         </div>
 
-        <a href="https://wa.me/62XXXXXXXXXX" class="btn btn-solid contact-cta" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 2C6.477 2 2 6.477 2 12C2 13.817 2.578 15.555 3.672 17H3.072L2.493 20.829L6.326 20.25L6.925 20.85C8.445 21.922 10.183 22.5 12 22.5C17.523 22.5 22 17.523 22 12C22 6.477 17.523 2 12 2Z" fill="currentColor"/>
-            <path d="M17.507 15.293C17.218 16.059 16.54 16.737 15.774 17.026C15.008 17.315 14.154 17.315 13.388 17.026C12.622 16.737 11.944 16.059 11.655 15.293C11.366 14.527 11.366 13.673 11.655 12.907C11.944 12.141 12.622 11.463 13.388 11.174C14.154 10.885 15.008 10.885 15.774 11.174C16.54 11.463 17.218 12.141 17.507 12.907C17.796 13.673 17.796 14.527 17.507 15.293Z" fill="#fff"/>
-          </svg>
+        <a href="https://wa.me/62XXXXXXXXXX" class="btn-arrow contact-cta" target="_blank" rel="noopener noreferrer">
           WhatsApp Chat Konsultasi
+          <span class="btn-arrow-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
         </a>
       </div>
     </div>
@@ -467,47 +583,24 @@
         </div>
 
         <div class="footer-section">
-          <h4>Kantor Utama</h4>
-          <p>[Placeholder] Alamat Kantor</p>
-          <p>Jakarta, Indonesia</p>
+          <h4>Navigasi</h4>
+          <p><a href="#hero">Beranda</a></p>
+          <p><a href="#tentang-kami">Tentang Kami</a></p>
+          <p><a href="#bidang-praktik">Bidang Praktik</a></p>
+          <p><a href="#faq">FAQ</a></p>
         </div>
 
         <div class="footer-section">
           <h4>Hubungi Kami</h4>
           <p><a href="tel:+62000000000">+62 000 0000 0000</a></p>
           <p><a href="mailto:email@example.invalid">[Placeholder] email@example.invalid</a></p>
-          <div class="footer-social">
-            <a href="#" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M19 0H5C2.238 0 0 2.238 0 5v14c0 2.762 2.238 5 5 5h14c2.762 0 5-2.238 5-5V5c0-2.762-2.238-5-5-5zm-11 19H5V9h3v10zm-1.5-11.5c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.5h-3v-5.5c0-1.3-.024-2.97-1.812-2.97-1.82 0-2.098 1.42-2.098 2.88V19H9.5V9h2.888v1.513h.04c.433-.82 1.494-1.687 3.075-1.687 3.284 0 3.888 2.156 3.888 4.966V19z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.992 3.656 9.129 8.438 9.879V14.89H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.344 21.129 22 16.992 22 12z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h4>Links</h4>
-          <p><a href="#hero">Beranda</a></p>
-          <p><a href="#tentang-kami">Tentang Kami</a></p>
-          <p><a href="#bidang-praktik">Bidang Praktik</a></p>
-          <p><a href="#lawyer">Profil Advokat</a></p>
-          <p><a href="#contact">Kontak</a></p>
         </div>
       </div>
-
+      
+      <div class="footer-wordmark">HARTAWATI</div>
+      
       <div class="footer-bottom">
-        <p class="footer-disclaimer">[Placeholder] Informasi di situs ini bersifat umum dan tidak merupakan nasihat hukum. Konsultasi langsung dengan advokat diperlukan untuk situasi spesifik.</p>
-        <p class="footer-copyright">© 2026 Hartawati Law Firm. [Placeholder] All rights reserved.</p>
+        <p class="footer-copyright">© 2026 Hartawati Law Firm. All rights reserved.</p>
       </div>
     </div>
   </footer>

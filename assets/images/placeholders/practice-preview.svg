@@ -1,0 +1,7 @@
+<svg width="180" height="240" viewBox="0 0 180 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="240" fill="#EFE3D0"/>
+  <path d="M60 80L90 60L120 80V160L90 180L60 160V80Z" stroke="#4A3B33" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="180" stroke="#4A3B33" stroke-width="2"/>
+  <circle cx="90" cy="120" r="20" stroke="#4A3B33" stroke-width="2"/>
+  <text x="90" y="220" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#4A3B33">Illustrasi Bidang 180×240</text>
+</svg>

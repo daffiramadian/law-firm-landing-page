@@ -106,10 +106,35 @@
     lastScroll = currentScroll;
   });
 
-  // Fade-in on scroll
+  // Hero line animation
+  const heroLines = document.querySelectorAll('.hero-line');
+  if (!reducedMotion && heroLines.length > 0) {
+    heroLines.forEach((line, index) => {
+      line.style.opacity = '0';
+      line.style.transform = 'translateY(30px)';
+      line.style.transition = `opacity 0.6s ease, transform 0.6s ease`;
+      line.style.transitionDelay = `${index * 120}ms`;
+      requestAnimationFrame(() => {
+        line.style.opacity = '1';
+        line.style.transform = 'translateY(0)';
+      });
+    });
+  }
+
+  // Fade-in on scroll with stagger
   if (!reducedMotion && 'IntersectionObserver' in window) {
-    const revealElements = document.querySelectorAll('.reveal');
+    const containers = new Set();
+    document.querySelectorAll('.reveal').forEach(el => {
+        if (el.parentElement) containers.add(el.parentElement);
+    });
     
+    containers.forEach(container => {
+        const reveals = container.querySelectorAll(':scope > .reveal');
+        reveals.forEach((el, i) => {
+            el.style.setProperty('--reveal-index', i.toString());
+        });
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -117,9 +142,9 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
-    revealElements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
 
 })();
