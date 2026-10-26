@@ -3,6 +3,11 @@
 (function() {
   'use strict';
 
+  // DUMMY MODE visual outline trigger (?dummy)
+  if (new URLSearchParams(window.location.search).has('dummy')) {
+    document.documentElement.classList.add('show-dummy-outlines');
+  }
+
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Mobile menu

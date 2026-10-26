@@ -2242,4 +2242,18 @@ footer {
   }
 }
 
+/* ================================================================
+   19. DUMMY MODE STYLING (?dummy in URL)
+   ================================================================ */
+
+.show-dummy-outlines [data-dummy] {
+  outline: 2px dashed #e53e3e !important;
+  outline-offset: 3px !important;
+}
+
+/* Dummy image defaults */
+img[data-dummy] {
+  object-fit: cover;
+}
+
 
