@@ -29,7 +29,10 @@
   --text-on-dark-soft: #CDBBA6;
 
   /* Transparent surfaces and borders */
-  --header-surface: rgba(250, 246, 240, 0.92);
+  --header-h: 80px;
+  --header-h-scrolled: 72px;
+  --header-offset: calc(var(--header-h) + 20px);
+  --header-surface: rgba(250, 246, 240, 0.96);
   --glass-surface: rgba(255, 255, 255, 0.06);
   --dark-border-strong: rgba(255, 255, 255, 0.18);
   --dark-border: rgba(255, 255, 255, 0.12);
@@ -101,6 +104,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-offset);
   overflow-x: clip;
 }
 
@@ -313,6 +317,9 @@ main > :last-child {
 .pill-tag {
   display: inline-flex;
   align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  align-self: flex-start;
   padding: 0.25rem 0.875rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
@@ -362,71 +369,130 @@ main > :last-child {
 .btn-arrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
-  padding: 0.875rem 1.5rem 0.875rem 2rem;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem 0.625rem 1.5rem;
   border-radius: var(--radius-pill);
   font-family: var(--font-heading);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
-  background-color: var(--accent);
-  color: var(--bg);
-}
-
-.btn-arrow:hover {
-  background-color: var(--text);
-}
-
-.btn-arrow:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  min-height: 48px;
+  box-sizing: border-box;
 }
 
 .btn-arrow-icon {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: transform 200ms ease, background-color 200ms ease, color 200ms ease;
 }
-
 
 .btn-arrow-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
+  display: block;
 }
 
-/* Dark context variant (caramel fill on dark bg) */
-.btn-arrow--dark {
+/* 1. Light context / Default (solid brown accent fill) */
+.btn-arrow,
+.btn-arrow--light {
+  background-color: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.btn-arrow .btn-arrow-icon,
+.btn-arrow--light .btn-arrow-icon {
+  background-color: var(--bg);
+  color: var(--accent);
+}
+
+.btn-arrow:hover,
+.btn-arrow--light:hover {
+  background-color: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+.btn-arrow:hover .btn-arrow-icon,
+.btn-arrow--light:hover .btn-arrow-icon {
   background-color: var(--caramel);
   color: var(--espresso);
 }
 
+.btn-arrow:focus-visible,
+.btn-arrow--light:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* 2. Dark context variant (caramel fill on dark bg) */
+.btn-arrow--dark {
+  background-color: var(--caramel);
+  color: var(--espresso);
+  border-color: var(--caramel);
+}
+
+.btn-arrow--dark .btn-arrow-icon {
+  background-color: var(--espresso);
+  color: var(--caramel);
+}
+
 .btn-arrow--dark:hover {
   background-color: var(--sand-deep);
+  border-color: var(--sand-deep);
+  color: var(--espresso);
+}
+
+.btn-arrow--dark:hover .btn-arrow-icon {
+  background-color: var(--espresso-2);
+  color: var(--sand-deep);
 }
 
 .btn-arrow--dark:focus-visible {
-  outline-color: var(--caramel);
+  outline: 2px solid var(--caramel);
+  outline-offset: 3px;
 }
 
-/* Light context (accent fill on light bg) - default */
-.btn-arrow--light {
-  background-color: var(--accent);
-  color: var(--bg);
+/* 3. Outlined variant */
+.btn-arrow--outlined,
+.faq-panel .btn-arrow {
+  background-color: transparent;
+  color: var(--caramel);
+  border-color: var(--caramel);
 }
 
-.btn-arrow--light:hover {
-  background-color: var(--text);
+.btn-arrow--outlined .btn-arrow-icon,
+.faq-panel .btn-arrow .btn-arrow-icon {
+  background-color: var(--caramel);
+  color: var(--espresso);
 }
 
-.btn-arrow--light:focus-visible {
-  outline-color: var(--accent);
+.btn-arrow--outlined:hover,
+.faq-panel .btn-arrow:hover {
+  background-color: var(--caramel);
+  color: var(--espresso);
+}
+
+.btn-arrow--outlined:hover .btn-arrow-icon,
+.faq-panel .btn-arrow:hover .btn-arrow-icon {
+  background-color: var(--espresso);
+  color: var(--caramel);
+}
+
+.btn-arrow--outlined:focus-visible,
+.faq-panel .btn-arrow:focus-visible {
+  outline: 2px solid var(--caramel);
+  outline-offset: 3px;
 }
 
 /* ================================================================
@@ -463,7 +529,7 @@ main > :last-child {
   }
 
   .btn-arrow:hover .btn-arrow-icon {
-    transform: translateX(2px) rotate(45deg);
+    transform: translate(2px, -2px);
   }
 }
 
@@ -479,8 +545,10 @@ main > :last-child {
    ================================================================ */
 
 header {
-  height: 80px;
+  height: var(--header-h);
   background-color: var(--header-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
   position: fixed;
   top: 0;
@@ -493,7 +561,7 @@ header {
 }
 
 header.is-scrolled {
-  height: 72px;
+  height: var(--header-h-scrolled);
 }
 
 .header-container {
@@ -610,7 +678,7 @@ header.is-scrolled {
 .nav-mobile {
   display: none;
   position: fixed;
-  top: 80px;
+  top: var(--header-h);
   left: 0;
   right: 0;
   bottom: 0;
@@ -620,7 +688,7 @@ header.is-scrolled {
 }
 
 header.is-scrolled .nav-mobile {
-  top: 72px;
+  top: var(--header-h-scrolled);
 }
 
 .nav-mobile:not([hidden]) {
@@ -795,7 +863,8 @@ footer p {
    ================================================================ */
 
 #hero {
-  padding: var(--space-xl) 0 var(--space-2xl);
+  padding-top: var(--header-offset);
+  padding-bottom: var(--space-2xl);
   background-color: var(--bg-warm);
 }
 
@@ -932,13 +1001,20 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.375rem;
+  justify-content: center;
+  gap: 0.5rem;
   padding: var(--space-lg) var(--space-sm);
   text-align: center;
+  min-width: 0;
 }
 
 .hero-stat svg {
-  stroke: var(--text-on-dark-soft);
+  width: 26px;
+  height: 26px;
+  stroke: var(--caramel);
+  color: var(--caramel);
+  flex-shrink: 0;
+  display: block;
 }
 
 .hero-stat-value {
@@ -969,6 +1045,9 @@ footer p {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-on-dark-soft);
+  line-height: var(--lh-normal);
+  white-space: normal;
+  max-width: 100%;
 }
 
 /* Mobile: no vertical separators */
@@ -979,7 +1058,8 @@ footer p {
 /* ---- Desktop hero ---- */
 @media (min-width: 768px) {
   #hero {
-    padding: var(--space-2xl) 0 var(--space-3xl);
+    padding-top: var(--header-offset);
+    padding-bottom: var(--space-3xl);
   }
 
   .hero-card {
@@ -1225,19 +1305,20 @@ footer p {
   .process-connector {
     position: absolute;
     display: block;
-    top: 5.5rem;
+    top: 5rem;
     left: 0;
     width: 100%;
     height: 12rem;
-    color: var(--caramel-soft);
+    color: rgba(210, 160, 107, 0.55);
     pointer-events: none;
+    z-index: 0;
   }
 
   .process-connector path {
     fill: none;
     stroke: currentColor;
-    stroke-width: 2;
-    stroke-dasharray: 8 10;
+    stroke-width: 2.5;
+    stroke-dasharray: 6 8;
   }
 
   .process-step:nth-child(odd) .process-step-card {
@@ -1258,14 +1339,23 @@ footer p {
 }
 
 @media (max-width: 767px) {
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    position: relative;
+  }
+
   .process-step:not(:last-child)::after {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: calc(-1 * var(--space-lg) / 2 - 1rem);
-    height: 2rem;
-    border-left: 2px dashed var(--caramel-soft);
+    bottom: calc(-1 * var(--space-xl));
+    width: 2px;
+    height: var(--space-xl);
+    border-left: 2px dashed rgba(210, 160, 107, 0.55);
     transform: translateX(-50%);
+    z-index: 0;
   }
 }
 
@@ -1773,7 +1863,7 @@ footer p {
 }
 
 .faq-panel {
-  max-width: 48rem;
+  width: 100%;
   margin: 0 auto;
   background-color: var(--espresso);
   border-radius: var(--radius-panel);
