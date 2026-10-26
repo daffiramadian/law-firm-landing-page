@@ -49,3 +49,23 @@ One-page marketing site for an Indonesian law firm. Indonesian language (lang="i
 - Never add fake ratings, review counts, success rates, case counts, or awards.
   Stats stay "[Placeholder] 00+".
 - Do not change copy or section order unless the stage asks for it.
+
+## DUMMY MODE (design review phase), overrides the "no invented facts" rule
+
+The site currently uses realistic DUMMY content so the design can be judged.
+Dummy content is allowed ONLY under these conditions:
+- Every element containing dummy text or a dummy image carries the attribute
+  data-dummy (on the nearest sensible element, e.g. the card, row or <img>).
+- <meta name="robots" content="noindex, nofollow"> stays in <head> and an HTML
+  comment "DUMMY DATA, DO NOT PUBLISH" sits at the top of index.html until
+  real content replaces it.
+- Every dummy item is listed in DUMMY_CONTENT.md (file, section, what to replace).
+- Dummy phone/WhatsApp numbers use zeros (e.g. +62 812 0000 0000) and emails use
+  example.com, so they can never reach a real person.
+- Still forbidden even as dummy: star ratings, review counts, success rates,
+  "won/menang/berhasil" outcome claims, awards, bar numbers, named real
+  companies, real people's names, or any promotional superlative.
+- Visible "[Placeholder]" prefixes are removed; the data-dummy attribute replaces
+  them as the way to find dummy content.
+- Opening the page with ?dummy in the URL outlines all [data-dummy] elements
+  (dashed red) so I can see what is still fake.
