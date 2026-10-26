@@ -464,33 +464,28 @@ main > :last-child {
 }
 
 /* 3. Outlined variant */
-.btn-arrow--outlined,
-.faq-panel .btn-arrow {
+.btn-arrow--outlined {
   background-color: transparent;
   color: var(--caramel);
   border-color: var(--caramel);
 }
 
-.btn-arrow--outlined .btn-arrow-icon,
-.faq-panel .btn-arrow .btn-arrow-icon {
+.btn-arrow--outlined .btn-arrow-icon {
   background-color: var(--caramel);
   color: var(--espresso);
 }
 
-.btn-arrow--outlined:hover,
-.faq-panel .btn-arrow:hover {
+.btn-arrow--outlined:hover {
   background-color: var(--caramel);
   color: var(--espresso);
 }
 
-.btn-arrow--outlined:hover .btn-arrow-icon,
-.faq-panel .btn-arrow:hover .btn-arrow-icon {
+.btn-arrow--outlined:hover .btn-arrow-icon {
   background-color: var(--espresso);
   color: var(--caramel);
 }
 
-.btn-arrow--outlined:focus-visible,
-.faq-panel .btn-arrow:focus-visible {
+.btn-arrow--outlined:focus-visible {
   outline: 2px solid var(--caramel);
   outline-offset: 3px;
 }
@@ -1846,132 +1841,243 @@ footer p {
 }
 
 /* ================================================================
-   16. FAQ
+   16. TESTIMONIALS SECTION
    ================================================================ */
 
-.faq {
+.testimoni {
   padding: var(--space-3xl) 0;
   background-color: var(--bg-warm);
 }
 
-.faq-panel {
+.testimoni-panel {
   width: 100%;
   margin: 0 auto;
   background-color: var(--espresso);
   border-radius: var(--radius-panel);
   padding: var(--space-2xl) var(--space-lg);
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
-  .faq-panel {
-    padding: var(--space-3xl);
+  .testimoni-panel {
+    padding: var(--space-3xl) var(--space-2xl);
   }
 }
 
-.faq-panel .pill-tag {
-  border-color: var(--caramel);
-  color: var(--caramel);
-  margin-bottom: var(--space-md);
+/* Header */
+.testimoni-header-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
 
-.faq-panel h2 {
+@media (min-width: 768px) {
+  .testimoni-header-row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.testimoni-header-left .pill-tag {
+  margin-bottom: var(--space-sm);
+}
+
+.testimoni-header-left h2 {
   font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 300;
   color: var(--text-on-dark);
   line-height: var(--lh-tight);
-  margin-bottom: var(--space-2xl);
+  margin: 0 0 var(--space-sm) 0;
 }
 
-.faq-panel .btn-arrow {
+.testimoni-subtext {
+  color: var(--text-on-dark-soft);
+  max-width: 36rem;
+  margin: 0;
+  line-height: var(--lh-relaxed);
+}
+
+/* Play / Pause Toggle */
+.marquee-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-on-dark-soft);
+  font-size: 0.8rem;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.marquee-toggle:hover {
   color: var(--caramel);
   border-color: var(--caramel);
-  margin-top: var(--space-2xl);
 }
 
-.faq-accordion {
+.marquee-toggle:focus-visible {
+  outline: 2px solid var(--caramel);
+  outline-offset: 3px;
+}
+
+/* Marquee wrapper */
+.testimoni-marquee-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Edge fade mask on each marquee row */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+/* Track: flex row of cards, animated */
+.marquee-track {
+  display: flex;
+  gap: var(--space-md);
+  width: max-content;
+  will-change: transform;
+}
+
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee--left .marquee-track {
+  animation: marqueeLeft var(--marquee-duration-1, 40s) linear infinite;
+}
+
+.marquee--right .marquee-track {
+  animation: marqueeRight var(--marquee-duration-2, 53s) linear infinite;
+}
+
+/* Pause states */
+.testimoni-marquee-wrapper:hover .marquee-track,
+.testimoni-marquee-wrapper:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-track.is-paused {
+  animation-play-state: paused !important;
+}
+
+/* Below 640px: single row (row 2 hidden) */
+@media (max-width: 639px) {
+  .marquee--right {
+    display: none;
+  }
+}
+
+/* ---- Testimonial Card ---- */
+.testimoni-card {
+  flex-shrink: 0;
+  width: 360px;
+  border-radius: var(--radius-card);
+  background-color: var(--espresso-2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
 }
 
-.faq-accordion details {
-  border-bottom: 1px solid var(--dark-divider);
+@media (max-width: 639px) {
+  .testimoni-card {
+    width: 300px;
+  }
 }
 
-.faq-accordion details:last-child {
-  border-bottom: none;
+.testimoni-quote-icon {
+  margin-bottom: var(--space-sm);
+  line-height: 0;
 }
 
-.faq-accordion summary {
-  list-style: none;
-  cursor: pointer;
-  padding: var(--space-lg) 0;
-  font-size: 1rem;
-  font-weight: 500;
+.testimoni-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: var(--text-on-dark);
+  margin: 0;
+  font-style: normal;
+  flex: 1;
+}
+
+.testimoni-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: var(--space-md) 0;
+}
+
+.testimoni-author {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  transition: color 0.2s ease;
+  gap: var(--space-sm);
 }
 
-.faq-accordion summary:hover {
+.testimoni-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(210, 160, 107, 0.15);
+  border: 1px solid var(--caramel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--caramel);
 }
 
-.faq-accordion summary .icon {
-  flex-shrink: 0;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  transition: transform 0.3s ease;
-  margin-left: var(--space-md);
+.testimoni-name {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-on-dark);
+  font-style: normal;
 }
 
-.faq-accordion summary .icon::before,
-.faq-accordion summary .icon::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 1.5px;
-  background-color: var(--caramel);
-  border-radius: var(--radius-pill);
-  transform: translate(-50%, -50%);
-}
-
-.faq-accordion summary .icon::after {
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.faq-accordion details[open] summary .icon {
-  transform: rotate(45deg);
-}
-
-.faq-accordion .answer {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease;
-  overflow: hidden;
-}
-
-.faq-accordion details[open] .answer {
-  grid-template-rows: 1fr;
-}
-
-.faq-accordion .answer p {
-  min-height: 0;
+.testimoni-role {
+  font-size: 0.8rem;
   color: var(--text-on-dark-soft);
-  font-size: 1rem;
-  line-height: var(--lh-relaxed);
-  padding-bottom: var(--space-lg);
 }
 
+/* Reduced motion: static scrollable row, no animation, no clones */
 @media (prefers-reduced-motion: reduce) {
-  .faq-accordion summary .icon,
-  .faq-accordion .answer {
-    transition: none;
+  .marquee-track {
+    animation: none !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow: visible;
+  }
+
+  .testimoni-card {
+    scroll-snap-align: start;
+  }
+
+  .marquee-toggle {
+    display: none;
   }
 }
 

@@ -206,4 +206,89 @@
     }
   }
 
+  // Testimonials Marquee
+  const testimoniSection = document.getElementById('testimoni');
+  const marqueeWrapper = document.querySelector('.testimoni-marquee-wrapper');
+  const marqueeToggle = document.querySelector('.marquee-toggle');
+  const marqueeTrack1 = document.querySelector('[data-track="1"]');
+  const marqueeTrack2 = document.querySelector('[data-track="2"]');
+
+  if (marqueeWrapper && marqueeTrack1 && marqueeTrack2) {
+    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!isReducedMotion) {
+      // Clone cards for seamless loop
+      function cloneTrack(track) {
+        const cards = Array.from(track.children);
+        cards.forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          clone.setAttribute('inert', '');
+          track.appendChild(clone);
+        });
+      }
+
+      cloneTrack(marqueeTrack1);
+      cloneTrack(marqueeTrack2);
+
+      // Calculate animation durations based on track width
+      function setAnimationDurations() {
+        const width1 = marqueeTrack1.offsetWidth / 2; // Half width (50% animation)
+        const width2 = marqueeTrack2.offsetWidth / 2;
+        const speed1 = 40; // px/s
+        const speed2 = 30; // px/s
+        const duration1 = (width1 / speed1).toFixed(2);
+        const duration2 = (width2 / speed2).toFixed(2);
+        marqueeWrapper.style.setProperty('--marquee-duration-1', `${duration1}s`);
+        marqueeWrapper.style.setProperty('--marquee-duration-2', `${duration2}s`);
+      }
+
+      setAnimationDurations();
+      window.addEventListener('resize', setAnimationDurations);
+
+      // Pause on scroll out of view
+      if ('IntersectionObserver' in window) {
+        const observerOpts = { threshold: 0 };
+        const pauseObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (!marqueeWrapper.classList.contains('is-paused')) {
+                marqueeTrack1.style.animationPlayState = 'running';
+                marqueeTrack2.style.animationPlayState = 'running';
+              }
+            } else {
+              marqueeTrack1.style.animationPlayState = 'paused';
+              marqueeTrack2.style.animationPlayState = 'paused';
+            }
+          });
+        }, observerOpts);
+        pauseObserver.observe(testimoniSection);
+      }
+
+      // Play / Pause toggle
+      if (marqueeToggle) {
+        marqueeToggle.addEventListener('click', () => {
+          const isPaused = marqueeToggle.getAttribute('aria-pressed') === 'true';
+          marqueeWrapper.classList.toggle('is-paused');
+          marqueeToggle.setAttribute('aria-pressed', String(!isPaused));
+
+          // Toggle icon visibility
+          const pauseIcon = marqueeToggle.querySelector('.marquee-toggle-icon--pause');
+          const playIcon = marqueeToggle.querySelector('.marquee-toggle-icon--play');
+          if (pauseIcon && playIcon) {
+            pauseIcon.style.display = isPaused ? 'inline' : 'none';
+            playIcon.style.display = isPaused ? 'none' : 'inline';
+          }
+
+          // Toggle label
+          const label = marqueeToggle.querySelector('.marquee-toggle-text');
+          if (label) label.textContent = isPaused ? 'Jeda' : 'Putar';
+        });
+      }
+    } else {
+      // Reduced motion: no cloning, no toggle button
+      if (marqueeToggle) marqueeToggle.style.display = 'none';
+    }
+  }
+
 })();
