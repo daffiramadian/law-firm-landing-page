@@ -1,130 +1,98 @@
 # Daffi Law Firm — Spec-Driven AI Engineering Showcase
 
-> A modern, accessible, zero-dependency one-page marketing website for an Indonesian law firm, built through disciplined **Spec-Driven AI Engineering** and vanilla web technologies.
+A modern, accessible, zero-dependency one-page marketing website for a fictional Indonesian law firm. It is built with semantic HTML, vanilla CSS, and vanilla JavaScript.
 
-[![HTML5](https://img.shields.io/badge/HTML5-Semantic-E34F26?logo=html5&logoColor=white)](#)
-[![CSS3](https://img.shields.io/badge/CSS3-Vanilla%20Variables-1572B6?logo=css3&logoColor=white)](#)
-[![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla%20ES6+-F7DF1E?logo=javascript&logoColor=black)](#)
-[![Dependencies](https://img.shields.io/badge/Dependencies-0%20(Zero)-success)](#)
-[![Accessibility](https://img.shields.io/badge/WCAG-2.1%20AA%20Compliant-blue)](#)
-[![License](https://img.shields.io/badge/License-ISC-lightgrey)](#)
+[![HTML5](https://img.shields.io/badge/HTML5-Semantic-E34F26?logo=html5&logoColor=white)](#) [![CSS3](https://img.shields.io/badge/CSS3-Vanilla%20Variables-1572B6?logo=css3&logoColor=white)](#) [![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla%20ES6+-F7DF1E?logo=javascript&logoColor=black)](#) [![Dependencies](https://img.shields.io/badge/Dependencies-0%20(zero)-success)](#) [![Accessibility](https://img.shields.io/badge/WCAG-2.1%20AA-blue)](#)
 
----
+## Project overview
 
-## 🎯 Project Overview & Philosophy
+This project explores how far a focused AI-assisted workflow can take a small website when the rules, design direction, and technical constraints are written down first.
 
-**Daffi Law Firm** is a showcase of high-craft web engineering and **disciplined "vibecoding"**. Instead of relying on bloated JavaScript frameworks, heavy CSS preprocessors, or complex node build chains, this site is crafted purely with:
-- **Plain HTML5** (semantic structure, single `<h1>`, strict accessibility order)
-- **Plain CSS3** (strict design tokens via `:root` CSS variables, mobile-first layouts, zero CSS libraries)
-- **Vanilla JavaScript** (lightweight controllers for scroll-spy, responsive navigation, and accessible animations)
+## Why I built this
 
-This repository serves as a case study demonstrating that AI coding assistants perform best when governed by strict architectural boundaries, explicit constraints (`AGENTS.md`), and modular work packages (WP1–WP6).
+AI agents are becoming very good at planning, coding, and creating things. The problem is that much of that capability is limited by token quotas or paid plans. As a free-tier user, I wanted to find a way to spend fewer tokens on setup, repeated explanations, and context gathering.
 
----
+The approach I found was to give the agent clear project context before assigning work. Files such as `AGENTS.md`, `DESIGN.md`, and other project notes explain the rules, design direction, technical limits, and current state of the work. With that context available, the agent can spend less time figuring out the project and more time completing the assignment.
 
-## 🏛️ Key Engineering Constraints
+This project is my practical experiment with that idea. It also helped me understand the basics of spec-driven development: define the constraints first, break the work into smaller packages, and keep the project history easy to follow.
 
-1. **Zero External Runtime Dependencies:** No npm packages, no Tailwind, no React, no jQuery, no icon fonts (all icons are pure inline SVG).
-2. **Indonesian Advocate Ethics Compliance:** Strictly informational tone in Indonesian (`lang="id"`). Completely free of promotional superlatives (*"terbaik"*, *"pasti menang"*, *"garansi 100%"*), fake star ratings, or invented client outcome claims.
-3. **Dummy Mode Architecture:** Fictional placeholder content is segregated with the `data-dummy` attribute and cataloged in [`DUMMY_CONTENT.md`](./DUMMY_CONTENT.md). Adding `?dummy` to the URL renders visible red-dashed outlines on all mock data for visual client review.
-4. **Performance & Asset Budget:** All images are optimized WebP formats cropped to precise aspect ratios (4:5, 4:3, 3:4, 1:1), each weighing well under 150 KB.
-5. **Accessibility (WCAG 2.1 AA):**
-   - Visible `:focus-visible` ring across all interactive elements (`2px` outline with `3px` offset).
-   - High-contrast color palette adhering to 4.5:1 text contrast ratios.
-   - Full `prefers-reduced-motion` support (disables auto-play marquee, smooth scroll overrides, and entry stagger transitions).
-   - WCAG 2.2.2 compliant play/pause control on moving content.
+The website is still a work in progress and has plenty of room for improvement. The main value of this repository is what I learned about giving AI agents better instructions and using context files to make their work more focused. I plan to improve the site and apply these ideas in future projects.
 
----
+## What the project demonstrates
 
-## ✨ Features & Architecture
+- Semantic HTML5 and a single-page layout
+- Vanilla CSS with shared design tokens
+- Vanilla JavaScript with no runtime dependencies
+- Responsive navigation and scroll tracking
+- Keyboard-friendly practice-area interactions
+- A testimonial marquee with pause controls
+- Reduced-motion support
+- Dummy-content mode for reviewing fictional content
+- A documented, spec-driven workflow for AI-assisted development
 
-### 1. Zero-Shift Practice Areas Controller
-The *Bidang Praktik* (Practice Areas) section features interactive hover and keyboard navigation. Using CSS Grid rows and decoupled preview cards (`position: absolute; pointer-events: none;`), row expansion causes **0 layout shift (CLS: 0)**.
+## Engineering highlights
 
-### 2. Dual-Row Opposite-Direction Testimonial Marquee
-The *Testimoni* section features an infinite marquee animating two opposite-direction rows:
-- **Row 1:** Scrolls left at 40px/s.
-- **Row 2:** Scrolls right at 30px/s.
-- Automatic duration calculation based on track width.
-- Pauses smoothly on hover, on keyboard focus (`:focus-within`), when scrolled out of view (`IntersectionObserver`), or via the accessible toggle button (`Jeda` / `Putar`).
-- When `prefers-reduced-motion` is enabled, the marquee gracefully degrades into a static, horizontal snap-scroll list.
+The site is intentionally small, but it includes a few details that made the build interesting:
 
-### 3. Responsive 7-Section Navigation & Scroll-Spy
-The fixed header automatically adapts across screen widths:
-- **< 1100px:** Accessible hamburger menu drawer with outside-click and `Escape` dismiss.
-- **1100px – 1439px:** Compact desktop layout (`12.5px` font, shortened `"Konsultasi"` CTA).
-- **1440px+:** Full desktop layout with expanded letter-spacing and `"Mulai Konsultasi"` CTA.
-- The scroll-spy tracks section boundaries and guarantees exactly one `aria-current="true"` state at all times.
+- **Zero-shift practice areas:** interactive rows use a grid-based layout so previews do not push the rest of the page around.
+- **Dual-row testimonial marquee:** two rows move in opposite directions, pause on hover or focus, stop when outside the viewport, and fall back to a static list when reduced motion is enabled.
+- **Responsive navigation:** the header changes between a mobile drawer, compact desktop layout, and full desktop layout. The scroll-spy keeps the active section in sync.
+- **Dummy audit mode:** adding `?dummy` highlights fictional content so it can be reviewed before real content is added.
 
----
+## Main constraints
 
-## 📂 Project Directory Structure
+- No React, Tailwind, jQuery, icon fonts, or npm runtime packages
+- Informational Indonesian-language content without unsupported legal promises or invented client results
+- Fictional content marked with `data-dummy` and listed in [`DUMMY_CONTENT.md`](./DUMMY_CONTENT.md)
+- WebP image assets kept under 150 KB where possible
+- Visible focus states, sufficient color contrast, keyboard support, and `prefers-reduced-motion` handling
+
+## Project structure
 
 ```text
 daffi-law-firm/
-├── assets/
-│   └── images/
-│       ├── dummy/              # 19 royalty-free WebP/JPG images (<150KB)
-│       │   └── CREDITS.md      # Full Unsplash image source licenses & IDs
-│       └── placeholders/       # Aspect-ratio fallback SVG templates
-├── css/
-│   └── style.css               # Single source of style truth (:root tokens, no Tailwind)
-├── docs/
-│   ├── handoffs/               # Stage-by-stage AI continuity handoff briefs
-│   ├── history/Plan.md         # Full project evolution and WP1-WP6 changelog
-│   └── prompts/                # Reference upgrade prompts
-├── js/
-│   └── main.js                 # Vanilla JS controllers (IIFE, zero dependencies)
-├── .editorconfig               # Consistent cross-editor formatting
-├── .gitattributes              # Git line-ending normalization (LF)
-├── .gitignore                  # Clean repository ignores
-├── DUMMY_CONTENT.md            # Registry of all mock elements and replacement guidance
-├── favicon.ico                 # Site favicon
-├── index.html                  # Root entry point (production & GitHub Pages ready)
-├── package.json                # Project manifest with quick-start script (0 dependencies)
-└── README.md                   # Project documentation & engineering showcase
+├── assets/                    # Images, placeholders, and image credits
+├── css/style.css              # Design tokens and page styles
+├── docs/                      # Handoffs, project history, and prompts
+├── js/main.js                 # Vanilla JavaScript controllers
+├── DUMMY_CONTENT.md           # Fictional-content registry
+├── index.html                 # Website entry point
+├── package.json               # Project manifest; no runtime dependencies
+└── README.md                  # Project documentation
 ```
 
----
+## Run it locally
 
-## 🚀 Quick Start & Local Preview
-
-Because there is no build step or node dependency installation, you can preview the website instantly using any local HTTP static server:
+The site has no build step. Start any local static server from the project directory:
 
 ```bash
-# Option 1: Using npx serve (Node.js)
+# Node.js
 npx serve .
 
-# Option 2: Using Python 3 built-in server
+# Python 3
 python -m http.server 3000
-
-# Option 3: Using VS Code Live Server extension
-# Right-click index.html -> "Open with Live Server"
 ```
 
-Once running, visit:
-- **Main Website:** `http://localhost:3000/`
-- **Dummy Audit Mode:** `http://localhost:3000/?dummy` *(highlights all fictional content in red)*
+Then open `http://localhost:3000/`.
 
----
+To review the fictional content, open:
 
-## 🤖 The "Spec-Driven AI Engineering" Workflow
+```text
+http://localhost:3000/?dummy
+```
 
-This project was built iteratively using AI agents governed by strict rules (`AGENTS.md`):
+## Workflow
 
-1. **Hard Rules Over Vibe Hints:** The agent system prompt enforced non-negotiable boundaries: zero npm packages, zero external icon fonts, no invented client facts, and no promotional claims.
-2. **Phase Isolation:** Development was broken down into atomic Work Packages:
-   - **WP1:** Header offset token normalization & visual badge polish.
-   - **WP2:** Practice areas CSS grid refactor & keyboard controller.
-   - **WP3:** Testimonials marquee implementation & WCAG 2.2.2 pause controls.
-   - **WP4:** Navigation expansion to 7 sections & responsive 1100px breakpoint.
-   - **WP5:** Dummy mode architecture, `DUMMY_CONTENT.md`, and Unsplash asset pipeline.
-   - **WP6:** Final responsive QA across 8 viewports & repository cleanup.
-3. **Auditability:** Every step left a verifiable paper trail in `docs/` and Git history, proving that AI-assisted code can be rigorous, maintainable, and pristine.
+The work was split into six small packages covering the header, practice areas, testimonials, navigation, dummy-content mode, and responsive QA. Project rules and design decisions were written down before implementation so the AI agent had the context it needed.
 
----
+The repository also keeps handoff notes and project history in `docs/`. These files make it easier to continue work without asking the agent to rediscover the whole project each time.
 
-## 📄 License & Asset Credits
+## Current status
 
-- **Code:** Licensed under the [ISC License](./package.json).
-- **Photography:** All dummy photography in `assets/images/dummy/` is royalty-free under the [Unsplash License](https://unsplash.com/license). Complete photograph IDs, dimensions, and photographer attributions are documented in [`assets/images/dummy/CREDITS.md`](./assets/images/dummy/CREDITS.md).
+This is a learning project and the website is not finished. The implementation shows the basic workflow I wanted to explore, but the design, content, and engineering can still be improved.
+
+## License and credits
+
+- Code: [ISC License](./package.json)
+- Dummy photography: [Unsplash License](https://unsplash.com/license)
+- Image IDs, dimensions, and photographer credits: [`assets/images/dummy/CREDITS.md`](./assets/images/dummy/CREDITS.md)
